@@ -434,6 +434,7 @@ public class OAuth2Sample {
              allegatidto.setSchoolLevel(schoolLevel);
              String shortResume = leallegati.get(7).getCustomElements().getValue(tagsallegati[lav].toString());
              allegatidto.setShortResume(shortResume);
+             
              System.out.println("ExpId= "+ExpId+" scuola= "+school+", città= "+city+", province= "+province+", titolo esperienza= "+experienceTitle+", livello scolastico= "+schoolLevel);
           } 
           //prendo value id e value per ogni esperienza
