@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/stefania/Documents/gdata/java/lib/gdata-spreadsheet-3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/stefania/Documents/gdata/java/lib/gdata-spreadsheet-meta-3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/stefania/Documents/google-api-services-drive-v2-rev191-1.20.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/L4AllPortalDTO"/>
+	<classpathentry kind="lib" path="lib/gson-2.3.1.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
