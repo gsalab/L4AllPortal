@@ -126,6 +126,21 @@
       <artifactId>google-oauth-client-jetty</artifactId>
       <version>${project.oauth.version}</version>
     </dependency>
+    <dependency>
+		<groupId>com.google.gdata</groupId>
+		<artifactId>core</artifactId>
+		<version>1.47.1</version>
+	</dependency>
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.5</version>
+	</dependency>
+	<dependency>
+		<groupId>com.google.apis</groupId>
+		<artifactId>google-api-services-drive</artifactId>
+		<version>v2-rev191-1.20.0</version>
+	</dependency>
   </dependencies>
   <properties>
     <project.http.version>1.19.0</project.http.version>
