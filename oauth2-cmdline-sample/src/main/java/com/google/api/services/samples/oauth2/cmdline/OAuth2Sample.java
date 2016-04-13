@@ -67,7 +67,7 @@ import java.util.List;
  * @author Yaniv Inbar
  */
 public class OAuth2Sample {
-
+   
   /**
    * Be sure to specify the name of your application. If the application name is {@code null} or
    * blank, the application will log a warning. Suggested format is "MyCompany-ProductName/1.0".
@@ -432,11 +432,13 @@ public class OAuth2Sample {
              allegatidto.setExperienceTitle(experienceTitle);
              String schoolLevel =leallegati.get(6).getCustomElements().getValue(tagsallegati[lav].toString());
              allegatidto.setSchoolLevel(schoolLevel);
+             String shortResume = leallegati.get(7).getCustomElements().getValue(tagsallegati[lav].toString());
+             allegatidto.setShortResume(shortResume);
              System.out.println("ExpId= "+ExpId+" scuola= "+school+", città= "+city+", province= "+province+", titolo esperienza= "+experienceTitle+", livello scolastico= "+schoolLevel);
           } 
           //prendo value id e value per ogni esperienza
            ArrayList<AttachmentDTO> Listallegatodto = new ArrayList<AttachmentDTO>(); 
-           for(int y=RIGA_START_ALLEGATI+6;y<leallegati.size()-RIGA_START_ALLEGATI;y++) {
+           for(int y=RIGA_START_ALLEGATI+7;y<leallegati.size()-RIGA_START_ALLEGATI;y++) {
              AttachmentDTO allegatodto = new AttachmentDTO();  
              //if(leallegati.get(y+1).getCustomElements().getValue(tagsallegati[0].toString())!=null) break;
              String atype = leallegati.get(RIGA_START_ALLEGATI+y).getCustomElements().getValue(tagsallegati[0].toString());
