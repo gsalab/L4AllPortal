@@ -2,11 +2,21 @@ package it.unisalento.l4allportal.dto;
 
 import java.util.ArrayList;
 
-public class SchemaDTO {
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-	private LayoutDTO layout;
-	private ArrayList<AttachmentsDTO> attachments;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class SchemaDTO {
 	
+	@XmlElement(required=true) 
+	private LayoutDTO layout;
+	
+	@XmlElement(required=true) 
+	private ArrayList<AttachmentsDTO> attachments;
 	
 	public LayoutDTO getLayout() {
 		return layout;

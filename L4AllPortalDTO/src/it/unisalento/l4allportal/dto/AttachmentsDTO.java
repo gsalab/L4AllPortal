@@ -2,15 +2,27 @@ package it.unisalento.l4allportal.dto;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class AttachmentsDTO {
 
+	@XmlElement
 	private String experienceName;
+	@XmlElement
 	private String school;
+	@XmlElement
 	private String city;
+	@XmlElement
 	private String province;
+	@XmlElement
 	private String experienceTitle;
+	@XmlElement
 	private String schoolLevel;
+	@XmlElement
+	private String shortResume;
+	@XmlElement
 	private ArrayList<AttachmentDTO> attachments;
+	
 	public String getExperienceName() {
 		return experienceName;
 	}
@@ -52,6 +64,13 @@ public class AttachmentsDTO {
 	}
 	public void setAttachments(ArrayList<AttachmentDTO> attachments) {
 		this.attachments = attachments;
+	}
+	public String getShortResume() {
+		return shortResume;
+	}
+
+	public void setShortResume(String shortResume) {
+		this.shortResume = shortResume;
 	}
 	
 	

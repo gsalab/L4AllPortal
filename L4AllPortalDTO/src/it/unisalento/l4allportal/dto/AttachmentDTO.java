@@ -1,13 +1,21 @@
 package it.unisalento.l4allportal.dto;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class AttachmentDTO {
 	
 	/**
 	 * inserisci una delle costanti presenti in AttachmentType.java
 	 */
+	@XmlElement
 	private String type;
+	
+	@XmlElement
 	private String name;
+
+	@XmlElement
 	private String value;
+	
 	public String getType() {
 		return type;
 	}

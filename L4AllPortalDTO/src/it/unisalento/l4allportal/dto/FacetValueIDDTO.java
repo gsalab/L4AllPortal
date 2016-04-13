@@ -2,9 +2,13 @@ package it.unisalento.l4allportal.dto;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class FacetValueIDDTO {
 
+	@XmlElement
 	private String ID;
+	@XmlElement
 	private ArrayList<LocalizedFacetValueDTO> localizedValues;
 	
 	public String getID() {

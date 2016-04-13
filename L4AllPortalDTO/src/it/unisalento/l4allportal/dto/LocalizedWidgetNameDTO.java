@@ -1,8 +1,12 @@
 package it.unisalento.l4allportal.dto;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class LocalizedWidgetNameDTO {
 
+	@XmlElement
 	private String lang;
+	@XmlElement
 	private String value;
 	
 	public String getLang() {

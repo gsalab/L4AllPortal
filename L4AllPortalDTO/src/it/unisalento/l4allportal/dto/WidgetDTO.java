@@ -2,16 +2,22 @@ package it.unisalento.l4allportal.dto;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class WidgetDTO {
 
+	@XmlElement
 	private String id;
+	@XmlElement
 	private String name;
+	@XmlElement
 	private String color;
+	@XmlElement
 	private String font;
+	@XmlElement
 	private ArrayList<LocalizedWidgetNameDTO> localizedNames;
+	@XmlElement
 	private ArrayList<FacetDTO> facets;
-	
-	
 	
 	public String getId() {
 		return id;
