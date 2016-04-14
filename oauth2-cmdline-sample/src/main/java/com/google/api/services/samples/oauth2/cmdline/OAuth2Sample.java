@@ -57,6 +57,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -67,7 +68,12 @@ import java.util.List;
  * @author Yaniv Inbar
  */
 public class OAuth2Sample {
-   
+
+  
+  private final static String ID_SCHEMA = "1B5n8EpxPWQmoF-EeM3equ1miegFd3KqHHmXFuBDsm9E";
+  private final static String ID_ATTACHMENTS ="1BXCF53QU_MHaVx6eN0lIO20eCkg2Z57kkrLa4hQOhlo";
+  private final static String URL_DRIVE_SPREADSHEETS = "https://spreadsheets.google.com/feeds/spreadsheets/private/full";
+  
   /**
    * Be sure to specify the name of your application. If the application name is {@code null} or
    * blank, the application will log a warning. Suggested format is "MyCompany-ProductName/1.0".
@@ -160,7 +166,13 @@ public class OAuth2Sample {
      
       //***START GESTIONE FILE ESPERIENZE***//
       // Choose a spreadsheet more intelligently based on your app's needs.
-      SpreadsheetEntry spreadsheet = spreadsheets.get(2);
+      SpreadsheetEntry spreadsheet = null;
+      Iterator<SpreadsheetEntry> iterator = spreadsheets.iterator();
+      while(iterator.hasNext()) {
+        SpreadsheetEntry e = iterator.next();
+        if(e.getId().endsWith(ID_SCHEMA))
+          spreadsheet = e;
+      }
       System.out.println(" ");
       System.out.println(spreadsheet.getTitle().getPlainText());
       System.out.println(" ");
@@ -372,7 +384,13 @@ public class OAuth2Sample {
       //***FINE GESTIONE FILE ESPERIENZE***//
      
       //***START GESTIONE FILE ALLEGATI***//
-      SpreadsheetEntry spreadsheet1 = spreadsheets.get(0);
+      iterator = spreadsheets.iterator();
+      SpreadsheetEntry spreadsheet1 = null;
+      while(iterator.hasNext()) {
+        SpreadsheetEntry e = iterator.next();
+        if(e.getId().endsWith(ID_ATTACHMENTS))
+          spreadsheet1 = e;
+      }
       System.out.println(" ");
       System.out.println(spreadsheet1.getTitle().getPlainText());
       System.out.println(" ");
