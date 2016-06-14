@@ -1,0 +1,43 @@
+.facet-slidervalue{
+    float:left;
+    cursor:pointer;
+}
+
+.facet-slidervalue .histobar{
+    margin-left:1px; 
+    position:relative;
+}
+
+.facet-slidervalue .histobar .inner{
+    background-color:white; 
+    position:relative;
+}
+
+.facet-slidervalue-selected .histobar .inner{
+    background-color:blue; 
+}
+
+.facet-slidervalue .valueLabel a{
+    padding-left:2px;
+    color: grey;
+}
+
+.facet-slidervalue-selected .valueLabel a{
+    color: black;
+}
+
+
+.facet-slidervalue .segment{
+    margin-top: 3px;
+    margin-bottom: 2px;
+    height: 5px;
+}
+
+.facet-slidervalue-selected .segment{
+    background-color:blue;
+}
+
+.handle{
+    position: absolute;
+    
+}

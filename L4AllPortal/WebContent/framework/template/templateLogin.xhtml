@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+
+<div class="formContainer" style="width: 400px; margin-left: -200px;">
+  <div class="loginTitle">Login
+    <div class="loginClose"><a id="closeLogin" href="javascript:hideLogin();">X</a></div>
+  </div>
+  <div class="loginContent">
+    <div class="loginForm">
+      <form action="$loginURL$" method="GET">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="2" class="loginError"><div id="loginStatus"  class="error"></div></td>
+          </tr>
+          <tr>
+            <td><label class="label" for="login-email">Email:</label></td>
+            <td><input name="email" id="login-email" type="text" /></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input name="password" id="login-password" type="password" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="right"><input type="button" class="loginButton"value="accedi" onclick="javascript:RestInterface.doLogin(); waitLogin();" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    
+    <div class="registrationForm">
+      <form action="$registrationURL$" method="POST">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="2" class="loginError"><div id="regStatus" class="error"></div></td>
+          </tr>
+          <tr>
+            <td>Nome:</td>
+            <td><input name="nome" id="registrazione-nome"  type="text"></td>
+          </tr>
+          <tr>
+            <td >Cognome:</td>
+            <td><input name="cognome" id="registrazione-cognome"  type="text"></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input name="email" id="registrazione-email"  type="text"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input name="password" id="registrazione-password"  type="password"></td>
+          </tr>
+          <tr>
+            <td>Conferma password:</td>
+            <td><input name="conferma-password" id="registrazione-conferma-password"  type="password"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="right"><input type="button" class="loginButton"value="registrati" onclick="javascript:RestInterface.doRegistration(); waitLogin();" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    
+    <div class="recuperaForm">
+      <form action="$passwordRecoveryURL$" method="POST">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="2" class="loginError"><div id="recuperoStatus" class="error"></div></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><input name="nome" id="password-recovery-email"  type="text"></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="right"><input type="button" class="loginButton" value="recupera" onclick="javascript:RestInterface.doRicordaPassword(); waitLogin();" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    
+    <div class="alertMustLogin">
+    	Per utilizzare gli strumenti avanzati fai prima il login.
+    </div>
+    
+    <div class="checkWait">loading...</div>
+  </div>
+  <div class="loginFooter">Non sei ancora registrato? <a href="javascript:showRegistrationForm(true);">Registrati</a> <br>
+    Password dimenticata? <a href="javascript:showRecuperaForm(true);">Recupera</a></div>
+</div>
+
+</body>
+</html>

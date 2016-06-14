@@ -1,0 +1,519 @@
+/*WS 1112 LOGIN REGISTRAZIONE*/
+#showOverlay{
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 2001 !important;
+}
+
+div.cover{
+
+float:left;
+}
+.formContainer{
+	left: 50%;
+	margin: auto;
+	position: fixed;
+	top: 50px;
+	color: #333;
+}
+
+.loginTitle{
+	background:#6E97D6;
+	line-height:40px;
+	padding: 0 20px;
+	color:#FFF;
+	width:100%;
+}
+#showOverlay .loginTitle a:link{
+	color:#FFF;
+}
+.loginClose{
+	float:right;
+	right:0px;
+	top:0px;
+	line-height:40px;
+}
+.loginContent{
+	background:#F1F2F2;
+	line-height:40px;
+	padding: 0 20px;
+	color:#000;
+	width:100%;
+}
+.loginContent table td{
+	border:0px;
+	color:#333;
+	text-align:right;
+	padding:0 5px;
+}
+.loginForm{
+	padding: 20px;
+	display:table;
+	margin:auto;
+}
+.loginContent .loginButton{
+	background:#6E97D6;
+	border:none;
+	padding:5px 10px;
+	color:#FFF;
+}
+.loginFooter{
+	background:#fff;
+	padding: 20px;
+	color:#000;
+	width:100%;
+	/*height:50px;*/
+	text-align:center;
+}
+.loginFooter a:link{
+	color:#6E97D6;
+}
+.registrationForm{
+	padding: 20px;
+	display:table;
+	display:none;
+	margin:auto;
+}
+.recuperaForm{
+	padding: 20px;
+	display:table;
+	display:none;
+	margin:auto;
+}
+.checkWait{
+	padding: 20px;
+	display:table;
+	display:none;
+	margin:auto;
+}
+#showOverlay .error{
+	text-align:center;
+	color:#F00;
+}
+/*WS 1112 LOGIN REGISTRAZIONE*/
+
+/* FORM SALVATAGGIO */
+#save, #load {
+	text-align: left;
+}
+
+/* PANNELLI A TAB */
+.form-container{ /* contenitore delle form*/
+	padding:10px;
+	color:#414042;
+	
+}
+.form-container table td{
+	border:none;
+}
+.form-container input, textarea{
+	color:#757575;
+	font-family:Arial, Helvetica, sans-serif;
+	border:none;
+	margin:2px 0;
+	font-size:11px;
+}
+
+.form-radio-item{
+	line-height:30px;
+	color:#757575;
+	padding:0 5px;
+}
+
+.form-container-title{
+	color:#231F20;
+	line-height:30px;
+	font-style:italic;
+	font-weight:bold;
+}
+.form-treeview{
+	background:#ffffff;
+	padding:10px;
+	margin: 0 0 10px 0;
+}
+.form-btn{
+	padding:7px 15px 7px 50px;
+	color:#FFF;
+	border:none;
+	margin:5px 0px;
+	text-align:left;
+	cursor:pointer;
+}
+/*.form-btn-grey{
+	background-color:#939598;
+}
+.form-btn-red{
+	background-color:#f4553b;
+}*/
+
+
+.form-separator{ /* contenitore delle form*/
+	background:url(../images/form-separator-bg.jpg) repeat-x;
+	width:100%;
+	height:2px;
+}
+.jstree-default .jstree-focused{/* forza il bg binaco nel plugin treeview*/
+	background:#FFF;
+}
+.jstree a{
+	color:#F00;
+}
+
+/* CUSTOMIZZAZIONE TABS E ACCORDION */
+#ui-accordion-accordion-header-0{
+	color:#fff;
+	line-height:30px;
+	background:#6E97D6 url(../images/ico-acc-doc.png) no-repeat 15px;
+}
+#ui-accordion-accordion-header-1{
+	color:#fff;
+	line-height:30px;
+	background:#b9c123 url(../images/ico-acc-luoghi.png) no-repeat 15px;
+
+}
+.ui-accordion .ui-accordion-header{
+	background:#6E97D6;
+	color:#fff;
+	line-height:30px;
+	padding-left:40px;
+}
+.ui-accordion .ui-accordion-content{
+	padding:0;
+	background:#DDD;
+	clear: both;
+}
+.ui-tabs .ui-tabs-panel{
+	padding:0;
+}
+
+.accordion-tools {
+	float: right;
+}
+
+.accordion-tools img, .accordion-tools div {
+	float: left;
+	margin-left: 10px;
+}
+.accordion-tools .tool-buttons-separator {
+	border-right: 1px solid #fff;
+	height: 24px;
+}
+
+/* TAB DOCUMENTI */
+#tabs-informazioni  .ui-tabs-nav li {
+	width:95px;
+	height:auto;
+	background-color:rgba(110,151,214,0.3);
+	color:#58595B;
+	text-align:center;
+}
+#tabs-informazioni   .ui-tabs-nav li a {
+	color:#58595B;
+	width:100%;
+	padding:0;
+	height:inherit;
+	padding:45px 0 5px 0;
+}
+#tabs-informazioni  .ui-tabs-nav li:hover {
+	background:#DDDDDD;
+}
+#tabs-informazioni   .ui-tabs-nav li.ui-tabs-active{
+	background:#DDDDDD;
+}
+#tabs-informazioni   .ui-tabs-nav li.ui-state-disabled{
+	opacity:0.3;
+	filter:alpha(opacity=30);
+}	
+#tabs-informazioni   .ui-tabs-nav li.ui-state-disabled:hover{
+	background-color:rgba(110,151,214,0.3);
+}
+#tabs-informazioni   .ui-tabs-nav li.ui-state-disabled a{
+	cursor:default;
+}
+#tabs-informazioni .btn-aggiorna{
+	width:300px; background:url(../images/ico-btn-aggiorna.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni .btn-salva{
+	width:300px; background:url(../images/ico-btn-salva.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni .addAll {
+	width:300px; background:#6E97D6;
+}
+#tabs-informazioni .btn-sostiuisci{
+	width:250px; background:url(../images/ico-btn-sostituisci.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni #tabs-4_informazioni .btn-sostiuisci{ 
+	width: 300px;
+}
+#tabs-informazioni .btn-unisci{
+	width:250px; background:url(../images/ico-btn-unisci.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni .btn-sottrai{
+	width:250px; background:url(../images/ico-btn-sottrai.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni .btn-applica{
+	width:250px; background:url(../images/ico-btn-folder.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni .btn-link{
+	width:250px; background:url(../images/ico-btn-link.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni .btn-delete{
+	width:250px; background: #6E97D6;
+}
+#tabs-informazioni .btn-pdf{
+	width:250px; background:url(../images/ico-btn-pdf.png) #6E97D6 no-repeat 15px;
+}
+#tabs-informazioni .btn-svuota{
+	width:250px; background:url(../images/ico-btn-svuota.png) #6E97D6 no-repeat 15px;
+}
+
+	
+	
+/* TAB LUOGHI */
+#tabs-luogo  .ui-tabs-nav li {
+	width:95px;
+	height:auto;
+	background-color:rgba(198,213,49,0.3);
+	color:#58595B;
+	text-align:center;
+}
+#tabs-luogo   .ui-tabs-nav li a {
+	color:#58595B;
+	width:100%;
+	padding:0;
+	height:inherit;
+	padding:45px 0 5px 0;
+}
+#tabs-luogo  .ui-tabs-nav li:hover {
+	background:#DDDDDD;
+}
+#tabs-luogo  .ui-tabs-nav li.ui-tabs-active{
+	background:#DDDDDD;
+}
+#tabs-luogo  .ui-tabs-nav li.ui-state-disabled{
+	opacity:0.3;
+	filter:alpha(opacity=30);
+}	
+#tabs-luogo .ui-tabs-nav li.ui-state-disabled:hover{
+	background-color:rgba(198,213,49,0.3);
+}
+#tabs-luogo .ui-tabs-nav li.ui-state-disabled a{
+	cursor:default;}
+	
+#tabs-luogo .btn-aggiorna{
+	width:300px; background:url(../images/ico-btn-aggiorna.png) #b9c123 no-repeat 15px;
+}
+#tabs-luogo .btn-salva{
+	width:300px; background:url(../images/ico-btn-salva.png) #b9c123 no-repeat 15px;
+}
+#tabs-luogo .addAll {
+	width:300px; background: #b9c123;
+}
+#tabs-luogo .btn-unisci{
+	width:250px; background:url(../images/ico-btn-unisci.png) #b9c123 no-repeat 15px;
+}
+#tabs-luogo .btn-sostiuisci{
+	width:250px; background:url(../images/ico-btn-sostituisci.png) #b9c123 no-repeat 15px;
+}
+#tabs-luogo #tabs-4_luogo .btn-sostiuisci{ 
+	width: 300px;
+}
+#tabs-luogo .btn-sottrai{
+	width:250px; background:url(../images/ico-btn-sottrai.png) #b9c123 no-repeat 15px;
+}
+
+#tabs-luogo .btn-applica{
+	width:250px; background:url(../images/ico-btn-folder.png) #b9c123 no-repeat 15px;
+}
+#tabs-luogo .btn-link{
+	width:250px; background:url(../images/ico-btn-link.png) #b9c123 no-repeat 15px;
+}
+#tabs-luogo .btn-delete{
+	width:250px; background: #b9c123;
+}
+#tabs-luogo .btn-pdf{
+	width:250px; background:url(../images/ico-btn-pdf.png) #b9c123 no-repeat 15px;
+}
+#tabs-luogo .btn-svuota{
+	width:250px; background:url(../images/ico-btn-svuota.png) #b9c123 no-repeat 15px;
+}
+
+
+/*GENERICI*/
+.btn-crea{
+	background:url(../images/ico-btn-crea.png) #939598 no-repeat 15px;
+}
+#ui-id-1, #ui-id-5{
+	background:url(../images/tab-1.png) center top no-repeat;
+}
+#ui-id-2, #ui-id-6{
+	background:url(../images/tab-2.png) center top no-repeat;
+}
+#ui-id-3, #ui-id-7{
+	background:url(../images/tab-3.png) center top no-repeat;
+}
+#ui-id-4, #ui-id-8{
+	background:url(../images/tab-4.png) center top no-repeat;
+}
+
+
+.btn-disabled{
+	opacity:0.3;
+	filter:alpha(opacity=30);
+	cursor:default;
+}
+
+/* FORM STAPA WIDGET */
+#widgetPdfContainer {
+	text-align: left;
+}
+.widgetPdfContent{
+	background:#F1F2F2;
+	padding: 20px;
+	color:#000;
+	width:100%;
+	height: 500px;
+    overflow: auto;
+}
+
+/* SWITCHER TASSONOMIE */
+#taxonomy-switcher {
+	float: left;
+	margin-top: 15px;
+	margin-left: 25px;
+}
+
+#taxonomy-switcher div {
+	float: left;
+}
+
+#taxonomy-switcher .taxonomy-name {
+	text-transform: uppercase;
+	font-size: 10px;
+	color: #D2D3D4;
+	font-weight: bold;
+	padding: 6px;
+}
+
+#taxonomy-switcher .taxonomy-name.selected {
+	color: #D44678;
+}
+
+#taxonomy-switcher #taxonomy-selector {
+	width: 73px;
+	height: 21px;
+	padding: 0;
+	border: none;
+}
+
+#taxonomy-switcher #taxonomy-selector.switcher-doc {
+	background: url(../images/switcher-doc.png) no-repeat;
+}
+
+#taxonomy-switcher #taxonomy-selector.switcher-luoghi {
+	background: url(../images/switcher-luoghi.png) no-repeat;
+}
+
+
+/* POPUP DETTAGLI ELEMENTO */
+
+.wishListBott.remove {
+	width: 20px;
+	height: 20px;
+	background: url(../images/ico-rimuovi-carrello.png) no-repeat -3px -7px;
+}
+
+.wishListBott.add {
+	width: 20px;
+	height: 20px;
+	background: url(../images/ico-add-carrello.png) no-repeat -3px -7px;
+}
+
+/* CANVAS SECONDARIO */
+#viewSecond {
+	overflow-y: auto;
+}
+
+#viewSecond .legendaColore,
+#viewSecond .legendaShape {
+	display:none;
+}
+
+/*css lens*/
+.lensinformazioni{ 
+	width:645px; 
+	 -moz-box-shadow:    5px 5px 5px #666666;
+  -webkit-box-shadow: 5px 5px 5px #666666;
+  box-shadow:         5px 5px 5px #666666;
+  padding: 0;
+  color: #58595B;}
+.lensinformazioni .grey-box {background-color:#F1F2F2; border-bottom: 1px solid white; height: 220px; overflow-y: auto:}
+.lensinformazioni .title {background-color:#6E97D6; border-bottom: 1px solid white;height: 36px; line-height: 36px;
+  padding-left: 20px; font-weight: bold; color: white;}
+.lensinformazioni .float{ padding: 20px; width: 465px;}
+.lensinformazioni .level{font-style: italic;}
+.lensinformazioni img.cover{ width: 120px;  height: 120px; }
+.lensinformazioni .float .more{margin: 0 auto;width: 100px;}
+.lensinformazioni .shortDescription {float: left;}
+.lensinformazioni .box, .lensinformazioni .short{ padding: 7px;}
+.lensinformazioni .schoolLabel{font-weight: bold;font-style: normal;}
+.lensinformazioni .closeLens{ position:relative; cursor: pointer; z-index: 300;}
+.lensinformazioni img{margin: 8px;}
+.lensinformazioni .bott > div{float:left; margin-right: 5px;}
+.lensinformazioni .bott span {padding: 3px;}
+.lensinformazioni .lens_title_color { color: #FF3300; }
+
+.lensinformazioni .boxes{ position: relative; border-top: 1px solid #F1F2F2;}
+.lensinformazioni .boxes div{ background-color:white; margin-bottom: 5px;}
+.lensinformazioni .boxes .body ul {list-style-type: none; padding-left: 10px;}
+.lensinformazioni .boxes .body.header div { float: left;}
+.lensinformazioni .boxes .body.header .column-title { font-weight: bold; padding: 9px; width: 500px;}
+.lensinformazioni .boxes .body.header .column-rilevanza { font-style: italic;  padding: 9px;}
+.lensinformazioni .boxes .body ul li .nome-luogo { font-weight: bold; color:#b9c123; float: left; }
+.lensinformazioni .boxes .body ul li .wishListBott { float: left; margin: 0;}
+.lensinformazioni .boxes .body ul li.luogo .stars { float: right; margin-left: 50px;width: 45px; height: 15px; background-image: url(../../framework/script/images/stars-luogo.png);}
+.lensinformazioni .boxes .body.d ul li.luogo .stars {background-position: 0 0;}
+.lensinformazioni .boxes .body.e ul li.luogo .stars {background-position: 0 -15px;}
+.lensinformazioni .boxes .body.m ul li.luogo .stars {background-position: 0 15px;}
+
+.lens.built .lensinformazioni .wishListBott{ width:20px; position:relative; float:left; cursor:pointer;}
+
+.lensluogo{ 
+	width:645px; 
+	 -moz-box-shadow:    5px 5px 5px #666666;
+  -webkit-box-shadow: 5px 5px 5px #666666;
+  box-shadow:         5px 5px 5px #666666;
+  padding: 0;
+  color: #58595B;}
+.lensluogo .grey-box {background-color:#F1F2F2; border-bottom: 1px solid white; height: 190px; overflow-y: auto:}
+.lensluogo .title {background-color:#b9c123; border-bottom: 1px solid white;height: 36px; line-height: 36px;
+  padding-left: 20px; font-weight: bold; color: white;}
+.lensluogo .float{ padding: 20px;}
+.lensluogo .level{font-style: italic;}
+.lensluogo img.cover{ width: 0px;  height: 120px; }
+.lensluogo .float .more{ margin: 0 auto;width: 100px; }
+.lensluogo .shortDescription {float: left;}
+.lensluogo .box, .lensluogo .short{ padding: 7px;}
+.lensluogo .schoolLabel{font-weight: bold;font-style: normal;}
+.lensluogo .closeLens{ position:relative; cursor: pointer; z-index: 300;}
+.lensluogo img{margin: 8px;}
+.lensluogo .bott > div{float:left; margin-right: 5px;}
+.lensluogo .bott span {padding: 3px;}
+.lensluogo .lens_title_color { color: #FF3300; }
+
+.lensluogo .boxes{ position: relative; border-top: 1px solid #F1F2F2;}
+.lensluogo .boxes div{ background-color:white; margin-bottom: 5px;}
+.lensluogo .boxes .body ul {list-style-type: none; padding-left: 10px;}
+.lensluogo .boxes .body.header div { float: left;}
+.lensluogo .boxes .body.header .column-title { font-weight: bold; padding: 9px; width: 500px;}
+.lensluogo .boxes .body.header .column-rilevanza { font-style: italic;  padding: 9px;}
+.lensluogo .boxes .body ul li .nome-luogo { font-weight: bold; color:#6E97D6; float: left; }
+.lensluogo .boxes .body ul li .wishListBott { float: left;  margin: 0;}
+.lensluogo .boxes .body ul li.informazioni .stars {  float: right; margin-left: 50px; width: 45px; height: 15px; background-image: url(../../framework/script/images/stars-informazioni.png);}
+.lensluogo .boxes .body.d ul li.informazioni .stars { background-position: 0 0; }
+.lensluogo .boxes .body.e ul li.informazioni .stars { background-position: 0 -15px; }
+.lensluogo .boxes .body.m ul li.informazioni .stars { background-position: 0 15px; }
+.lens.built .lensluogo .wishListBott{ width:20px; position:relative; float:left; cursor:pointer;}

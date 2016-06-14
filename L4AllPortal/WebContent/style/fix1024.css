@@ -1,0 +1,88 @@
+#menu_facet{
+    width: 350px !important;
+    }
+    
+div.facet-value-label{
+    width: 80px !important;
+}
+
+div.facet-count {
+    left: 100px !important;
+}
+
+div.facet .facet-value .facet-histo{
+    left: 125px !important;  
+    width: 35px !important;  
+}
+.hierFacet ul.l0 > li.facet-value > .label {
+    width: 80px !important;
+}
+.hierFacet ul.l1 > li.facet-value > .label {
+    width: 65px !important;
+}
+
+.hierFacet div.label{
+   font-size: 90% !important;    
+}
+
+.hierFacet ul.l1 > li.facet-value > .facet-count {
+    left: 115px !important;
+}
+
+.hierFacet ul.l0 > li.facet-value > .facet-count {
+    left: 120px !important;
+}
+
+.hierFacet ul.l2 > li.facet-value > .label {
+    width: 65px !important;
+}
+
+#facet_description .absoluteView .facet-count {
+    left: 190px !important;
+}
+
+#facet_description .absoluteView .facet-histo {
+    left: 220px !important;
+    width: 90px !important;
+}
+
+#facet_description .percentView .facet-count {
+    left: 190px !important;
+}
+
+[val="Multimedialità"],[val="Immigrazione"],[val="Brainstorming"],[val="Ospedalizzazione malattia aree isolate"]{font-size: 90%;}
+
+.percentView div[val="Autoapprendimento"] div.facet-value-label, .absoluteView div[val="Autoapprendimento"] div.facet-value-label{font-size: 65% !important;}
+
+[val="Coinvolgimento della classe"],[val="Individualizzazione"],[val="Personalizzazione"],[val="Prevalentemente orario scolastico"],[val="Extracurricolare"],[val="Comportamenti"],[val="Apprendimento"]{font-size: 85%;}
+
+
+.viewTop{font-size: 75% !important}
+#view .viewTop .count {
+    width: 130px !important;
+    }
+
+#view .viewTop .proxy{
+ left: 300px !important;    
+}
+
+#view .viewTop .selection{
+ left: 150px !important;    
+}
+
+#map_detail .down ul{
+font-size: 85% !important;    
+}
+
+#map_detail .more .bott{
+font-size: 73% !important;    
+}
+
+#map_detail .more .bott > div{
+width: 65px !important;    
+}
+#map_detail .more .bott > div .label{
+width: 45px !important;    
+}
+
+#facet_coinvolgimento .facet-header-title{width: 70% !important;}

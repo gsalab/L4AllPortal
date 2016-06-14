@@ -1,0 +1,44 @@
+#loaderBack{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-color:white;
+    z-index:999;
+    filter:alpha(opacity=60);
+    opacity:.6;
+
+}
+
+#loaderCont{
+    position:fixed;
+    width:400px;
+    height:100px;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -50px;
+    background-color:white;
+    /* border: 3px solid black;
+    border-radius: 10px 10px 10px 10px; */
+		 -moz-box-shadow:    0 0 10px #000000 inset;
+  -webkit-box-shadow: 0 0 10px #000000 inset;
+  box-shadow:         0 0 10px #000000 inset;
+    z-index:1000;
+}
+    
+    
+#loaderCont div{
+    position:relative;
+    text-align:center;
+    top:30px;
+	
+}
+
+#loaderCont div span{
+    font-weight:bold;
+    position:relative;
+    top:-10px;
+    font-size:150%;
+}

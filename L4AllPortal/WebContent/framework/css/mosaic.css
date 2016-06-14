@@ -1,0 +1,36 @@
+#view .viewContainer .mosaicCell{
+    float:left;
+    margin: 2px;
+}
+
+#view .viewContainer .mosaicCell img{
+    width: 100%;
+    height: 100%;
+}        
+#view{
+    background-color: #F2EFEF;
+}
+
+#view .legendaColore span {
+    margin : 5px;
+}
+#view .legendaColore{
+    clear:both;
+    padding-top:5px;
+}
+
+#view .legendaShape {
+    clear:both;
+    padding-top:5px;
+}
+
+#view .legendaShape img {
+    margin-right: 5px;
+    background-color: #BFBFBF;
+    width: 20px;
+    height: 20px;
+}
+
+#view .legendaShape span {
+    margin: 5px;
+}

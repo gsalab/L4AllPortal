@@ -1,0 +1,199 @@
+
+/*font*/
+@font-face { font-family: Rokkitt ;  src: url( Rokkitt.ttf ) format("truetype"); } 
+body{/*font-family:"Rokkitt";*/font-family:"Arial"; font-size:12px;}
+
+/*css generici*/
+a:link, a:visited, a:active { text-decoration: none; color: black; }
+
+/*banner superiore*/
+.float{
+	float:right;
+	margin-top:10px;
+}
+.bannerMsg{
+	float:right; margin-top:18px; padding:0 5px;
+}
+#banner{/* background-color: white; */ /*position: fixed; ws commentato per rientrare nel layout pannelli*/ /*background:#FFF url(../framework/script/images/toolbar-top-bg.png) repeat-x bottom;*/ height:65px; 
+
+/*    -moz-box-shadow: 0px 3px 5px #000000;
+    -webkit-box-shadow: 0px 3px 5px #000000;
+    box-shadow: 0px 3px 5px #000000;*/
+
+}
+#view{ /*top:65px;*/ background:url(../framework/script/images/convas-bg.png);}
+#banner img{ padding: 0 5px; } 
+#banner img.export, #banner img.save{ display:none; }
+#banner .float img{ /*padding-top: 10px;*/ height:30px; width: 50px; border-left:0.5px dotted #CCCCCC; } /*WS 2011 modificato per nuove icone */
+
+#bannerLogin{width:60px; margin-top:10px;float:right; cursor:pointer;}
+
+/*css view*/
+.legendaColore, .viewContainer, .legendaShape{  padding: 5px; }
+.viewTop .inner{ color:white;}
+
+/*css facet*/
+
+.facet-header{position:relative;}
+
+.facet-header-title{
+        font-weight: bold;
+        width:50%;
+        text-wrap: normal;
+}
+
+.cloudFacet .relativeView .facet-value-selected{ color: #FF3300;}
+#menu_facet, #facet_left,#facet_right,#facet_bottom,#facet_center{background-color:#DBDBDB}
+#facet_description{ padding: 0.5em !important; /* width: 96% !important; */}
+#facet_description .facet-body{ max-height:200px; overflow:auto;} 
+#facet_description .percentView .facet-count{ left: 190px;}
+#facet_description .absoluteView .facet-count{ left: 190px;}
+#facet_description .absoluteView .facet-histo{ left: 220px; width: 140px;}
+#facet_description .absoluteView .facet-value-label, #facet_description .percentView .facet-value-label{ width: 165px !important;}
+
+ .percentView div.facet-count{ left: 135px;}
+
+#facet_year .facet-slidervalue .valueLabel{text-align:center;font-weight: bold; }
+
+#facet_disciplina  .facet-parentvalue > .facet-count{
+}
+#facet_context .absoluteView .facet-histo{ display:none;} 
+#facet_context .absoluteView .facet-count{ left: 163px;}
+#facet_context .absoluteView .facet-value{ font-size: 100%;} 
+#facet_context .percentView , #facet_discipline .absoluteView { max-height: 300px; overflow:auto;} 
+
+#facet_level .percentView .facet-count{ left: 155px;}
+
+#facet_structure .percentView .facet-count{ left: 155px;}
+
+#facet_teacher .facet-histo{display:none}
+#facet_teacher .facet-body{font-size:90%;}
+#facet_teacher .facet-count{left:185px;}
+
+.hierFacet{position: relative;}
+/*.hierFacet .facet-parentvalue > .facet-count{ position:absolute; left: 185px; margin-top: 2px;}
+.hierFacet .facet-parentvalue > ul > .facet-value.leaf > .facet-count{ position:absolute;  margin-top: 2px;}
+.hierFacet .facet-value.leaf > .facet-count{ position:absolute; margin-top: 2px;}*/
+
+.hierFacet .facet-count{float:right;}
+
+[title='Policultura&Moodle'] .facet-value-label{
+        font-size:80%;
+}
+
+
+/*css lens*/
+.lensexperience{ 
+	width:400px; 
+	 -moz-box-shadow:    5px 5px 5px #666666;
+  -webkit-box-shadow: 5px 5px 5px #666666;
+  box-shadow:         5px 5px 5px #666666;}
+.lensexperience .float{ position:absolute; top: 15px; left: 10px; width: 350px; }
+.lensexperience .float .title{ padding-top:10px; font-weight: bold; font-size: auto; padding-right:5px;}
+.lensexperience .level{font-style: italic;}
+.lensexperience img.cover{ width: 0px;  height: 120px; }
+.lensexperience .float .more{ position:absolute; top: 95px; }
+.lensexperience .box, .lensexperience .short{ padding: 7px;}
+.lensexperience .schoolLabel{font-weight: bold;font-style: normal;}
+.lensexperience .closeLens{ position:relative; cursor: pointer; z-index: 300;}
+.mosaicCell.on, .bott{ cursor: pointer;}
+.lensexperience .bott > div{float:left; margin-right: 5px;}
+.lensexperience .bott span {padding: 3px;}
+.lensexperience .lens_title_color { color: #FF3300; }
+
+.lensexperience .boxes{ position: relative; }
+.lensexperience .boxes div{ background-color:white; margin-bottom: 5px;}
+/*.lensexperience .div_descr{ position:absolute; top:0px; left:0px;}*/
+.buttonLink { margin-left: 150px; margin-top: -30px; }
+
+.tech{ background-color: #FFFFFF !important}
+.ogg{ background-color: #FFFFFF !important}
+.ben{ background-color: #FFFFFF !important}
+.incl{ background-color: #FFFFFF  !important}
+.impl{ background-color: #FFFFFF !important}
+.cont{ background-color: #FFFFFF !important}
+.wc{ background-color: #FFFFFF !important}
+
+.facet hr { color:  #000000 !important; background-color: #000000 !important; height: 2px; margin-top: 2px;border-width: 0px}
+.wc hr { color:  #FF3300 !important; background-color: #FF3300 !important; height: 2px; margin-top: 2px;border-width: 0px;}
+.tech hr { color:  #2767C4 !important; background-color: #2767C4 !important; height: 2px; margin-top: 2px;border-width: 0px;}
+.ogg hr { color:  #993399 !important; background-color: #993399 !important; height: 2px; margin-top: 2px;border-width: 0px;}
+.ben hr { color:  #66CCFF !important; background-color: #66CCFF !important; height: 2px; margin-top: 2px;border-width: 0px;}
+.incl hr { color:  #2A99BC !important; background-color: #2A99BC !important; height: 2px; margin-top: 2px;border-width: 0px;}
+.impl hr { color:  #99CC33 !important; background-color: #99CC33 !important; height: 2px; margin-top: 2px;border-width: 0px;}
+.cont hr { color:  #FF9933 !important; background-color: #FF9933 !important; height: 2px; margin-top: 2px;border-width: 0px;}
+
+.ogg .facet-header-title { color:  #993399 !important;}
+.ogg .bar{ background-color:  #993399 !important;}
+.cont .facet-header-title { color:  #FF9933 !important;}
+.cont .bar{ background-color:  #FF9933 !important;}
+.tech .facet-header-title { color:  #2767C4 !important;}
+.tech .bar{ background-color:  #2767C4 !important;}
+.ben .facet-header-title { color:  #66CCFF !important;}
+.ben .bar{ background-color:  #66CCFF !important;}
+.impl .facet-header-title { color:  #99CC33 !important;}
+.impl .bar{ background-color:  #99CC33 !important;}
+.incl .facet-header-title { color:  #2A99BC !important;}
+.incl .bar{ background-color:  #2A99BC !important;}
+.wc .facet-header-title { color:  #FF3300 !important;}
+.wc .bar{ background-color:  #FF3300 !important;}
+
+.div_sino{
+height: 10px !important;
+}
+
+/*CORREZZIONE DELLE PAROLE LUNGHE*/
+.percentView div[val='Ospedalizzazione malattia aree isolate'] div.facet-value-label, .absoluteView div[val='Ospedalizzazione malattia aree isolate'] div.facet-value-label{font-size:90%;}
+.percentView div[val='Individualizzazione'] div.facet-value-label, .absoluteView div[val='Individualizzazione'] div.facet-value-label{font-size:90%;}
+.percentView div[val='Personalizzazione'] div.facet-value-label, .absoluteView div[val='Personalizzazione'] div.facet-value-label{font-size:90%;}
+.percentView div[val='Autoapprendimento'] div.facet-value-label, .absoluteView div[val='Autoapprendimento'] div.facet-value-label{font-size:82%;}
+
+
+#facet_organizzazione .facet-header-title {font-size: 90%}
+#facet_coinvolgimento .facet-header-title {font-size: 90%}
+
+
+.openOnClick img{float:left}
+.openOnClick div{float:left; padding-top:5px;}
+.openOnClickLens img{float:left}
+.openOnClickLens div{float:left; padding-top:5px;}
+
+
+.div_link .body ul {
+ margin-top:0px;
+ margin-bottom:0px;    
+}
+
+.div_link{
+    /* height: 145px; */
+	height: auto;
+    overflow:auto;
+    }
+    
+li[val='d99']{
+    display:none !important;
+}
+
+.boxes .short, .boxes .div_descr{
+    font-size: 80%;
+    text-align:justify;
+    overflow: auto;
+    /* height: 85px; */
+	height: 100px;
+}
+.boxes .short{
+    height: auto;
+    overflow: auto;
+}
+
+#facet_IndiceAnalitico .facet-body{
+    height: 150px;
+    overflow: auto;
+}
+
+div[val="Prevalentemente orario scolastico"] .facet-value-label{
+    font-size: 95%;
+}
+
+
+[val="Competenze del docente"], [val="p214"]{display:none !important}

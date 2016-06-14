@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="x-ua-compatible" content="IE=9" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <meta name="google" value="notranslate"/>
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE"/> 
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE"/>
+	
+	<!-- META tags di indicizzazione -->
+	<META NAME="keywords" CONTENT="l4all, learning4all, learningforall, learningforall portal, learning4all portal, l4all portal, l4allportal.polimi.it">
+	<META NAME="description" CONTENT="Portal with all the experiences of the Learning For All project">
+    
+    <!--Librerie varie di Google (grafici, mappe, jquery.min) -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAZ4JBxqo876alKkqxW5OM10f5lQRKI5kc&sensor=false&language=it"> </script>
+
+    <!--Script che carica il framework -->
+    <script src="framework/script/mainApi.js" charset="utf-8"></script>
+    
+    <!-- NOTA: Tutti gli alri scriptvengono caricatit da mainApi.js -->  
+	
+	<script type="text/javascript"><!--
+    function ReplaceContentInContainer(id,content) {
+    var container = document.getElementById(id);
+    container.innerHTML = content;
+    }
+    //--></script>
+    
+	
+    <title>L4ALL Portal</title>
+    <link rel="stylesheet" type="text/css" href="style/l4all.css"/>
+    <link rel="stylesheet" type="text/css" href="style/layout.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="theme/css/ux_interface.css"/>
+    
+
+</head>
+<body>
+    <!--Configurazione iniziale del framework -->
+    <!-- D.T. Begin - aggiunto in itemType il tipo 'document' -->
+    <div role="collection" itemTypes="experience" loadAttrTitle="true" enablePDF="true" pdfServlet="http://hoc13.elet.polimi.it/pdf/l4all.php" enableWishList="true"  enableSave="true" facetLimit="170" enableOffline="true"  enableLogin="false"></div>
+    <!-- D.T. End -->
+    <div role="solr_url" value="http://hoc5.elet.polimi.it:8080/comfit/select/"></div> <!--indirizzo del Server-->
+    <div role="enableRefraso" string="Selezione attuale:" all="Tutte le esperienze"></div>  
+ 
+    <!--Inizio design del layout a pannelli -->
+    <div class="outer-center">
+        <!------------------------------------------------------------  --> 
+    	<!--CONTENITORE CENTRALE  convas primario, secondario e toolbar -->
+        <!------------------------------------------------------------  --> 
+        <div class="middle-center">
+            <!--CANVAS PRIMARIO -->
+            <div class="inner-center">
+            	<!-- Header -->   
+                <div id="banner">  
+                  <a href="http://www.learningforall.it/"><img src="theme/images/logo.png" style="height:50px;"></a>
+                  <div class="float" style="float:right;">
+                    <img  onclick="window.location.href=window.location.href" title="Ricarica la pagina" src="theme/images/refresh.png"/>
+                  </div>
+                </div>
+                
+                <!-- Contenitore della Canvas di visualizzazione -->    
+                <div id="view">
+                         
+                        
+
+                        <div id="mosaicview"
+                             role="canvas"
+                             label="Mosaico"
+                             viewClass="MosaicView"
+                             hexpressions="annoscolastico_s, format_s, macroAreaLabel_s" 
+                             hlabel="Anno scolastico, Format, Macro area geografica"
+                             idNarr="id" 
+                             row="20"
+                             col="20"
+                             title="label"
+                             shape="livelloscolastico_s"
+                             legendaShape="Livello scolastico:"
+                             sortby="annoscolastico_i"
+                             lenstype="experience"> 
+                        </div>
+                         
+                         <div id="mapPalliniView"
+                             role="canvas"
+                             label="Mappa"
+                             viewClass="MapView"
+                             mapCenterLat="42.90816"
+                             mapCenterLng="12.912597"
+                             mapZoom="6"
+                             proxy="region_s,area_s"
+                             proxyLabel="Regione,Provincia"
+                             proxyZoom="6,8"
+                             proxyLookUp="area"
+                             lat= "lat_s"
+                             lng= "lng_s"
+                             hexpressions="none,annoscolastico_s,livelloscolastico_s,format_s" 
+                             hlabel="Nessun Highlight,Anno scolastico,Livello Scolastico,Format"                 
+                             overlay="palle"
+                             lenstype="experience"
+                             > 
+                        </div>
+                        
+<!--                       <div id="mapCakeView"
+                             role="canvas"
+                             label="Mappa-Torte"
+                             viewClass="MapView"
+                             mapCenterLat="42.90816"
+                             mapCenterLng="12.912597"
+                             mapZoom="6"
+                             proxy="region_s,area_s"
+                             proxyLabel="Regione,Provincia"
+                             proxyZoom="6,8"
+                             proxyLookUp="area"
+                             lat= "lat_s"
+                             lng= "lng_s"
+                             hexpressions="annoscolastico_s,livelloscolastico_s,format_s" 
+                             hlabel="Anno scolastico, Livello Scolastico,Format"
+                             overlay="pie"
+                             lenstype="experience"
+                             > -->
+                             
+                         <div id="thumbview"
+                             role="canvas"
+                             label="Thumbnail"
+                             viewClass="ThumbView"
+                             hexpressions="annoscolastico_s,format_s, macroAreaLabel_s" 
+                             hlabel="Anno scolastico, Format, Macro area geografica"
+                             idNarr="id" 
+                             row="20"
+                             col="20"
+                             title="label"
+                             shape="livelloscolastico_s"
+                             legendaShape="Livello scolastico:"
+                             sortby="annoscolastico_i"
+                             lenstype="experience"> 
+                       
+                        </div>
+                </div>   
+                <!-- fine view--> 
+            </div>
+            
+            <!--CANVAS SECONDARIO -->
+            <!--<div class="inner-east">CONVAS SECONDARIO</div>--> 
+    
+        </div> 
+        <div class="middle-east">CANVAS SECONDARIO</div> 
+    </div>
+    
+    <!------------------------------------  --> 
+    <!--CONTENITORE DESTRA  accordion e tab -->
+    <!------------------------------------  --> 
+    <!--WIDGET--> 
+    <div class="outer-east">
+      <!--Accordion INIZIO-->
+      <div id="accordion">
+        <h3>DOCUMENTI</h3>
+        <div>
+          <!-- Tabs INIZIO-->
+          <div id="tabs-doc">
+            <ul>
+              <li><a href="#tabs-1">WIDGET</a></li>
+              <li><a href="#tabs-2">SALVA</a></li>
+              <li><a href="#tabs-3">GESTISCI</a></li>
+              <li><a href="#tabs-4">CARRELLO</a></li>
+            </ul>
+            <div id="tabs-1">
+            
+			  METTER QUI I WIDGET
+              
+            </div>
+            <div id="tabs-2">
+            
+            METTER QUI I SALVATAGGI
+            
+            </div>
+            <div id="tabs-3">
+            
+            METTERE QUI APERTURE
+            
+            </div>
+            <div id="tabs-4">
+            
+            METTERE QUI IL CARRELLO
+            
+            </div>
+          </div>
+          <!-- Tabs FINE -->
+        </div>
+        <h3> LUOGHI</h3>
+        <div>
+          <!-- Tabs INIZIO-->
+          <div id="tabs-luoghi">
+            <ul>
+              <li><a href="#tabs-5">WIDGET</a></li>
+              <li><a href="#tabs-6">SALVA</a></li>
+              <li><a href="#tabs-7">GESTISCI</a></li>
+              <li><a href="#tabs-8">CARRELLO</a></li>
+            </ul>
+            <div id="tabs-5">
+            
+           		 METTER QUI I WIDGET
+            
+            </div>
+            <div id="tabs-6">
+            
+           		 METTER QUI I SALVATAGGI
+            
+            </div>
+            <div id="tabs-7">
+            
+            	METTERE QUI APERTURE
+            
+            </div>
+            <div id="tabs-8">
+            
+            	METTERE QUI IL CARRELLO
+            
+            </div>
+          </div>
+          <!-- Tabs FINE -->
+
+        </div>
+      </div> 
+      <!--Accordion FINE-->   
+    </div>
+     
+    </div> 
+    <!------------------------------------  --> 
+    <!--CONTENITORE BOTTOM  footer          -->
+    <!------------------------------------  --> 
+    <!--<div class="ui-layout-south">EVENTUALE FOOTER</div> -->
+
+
+    <!------------------------------------  --> 
+    <!--CODICE FINESTRE DETTAGLIO           -->
+    <!------------------------------------  -->    
+    <!--Lens: modello delle finestre di dettaglio -->
+   <div id="lensExperience" class="lens" role="lens"  enableCheckList="true" itemtype="experience">
+        <div class="container" val-content="id">
+           
+            <img class="cover" prefisso="http://hoc13.elet.polimi.it/policulture/files/images/thumb/small/" src-content="cover"/></div>
+            <div class="float">
+				<div class="lens_title_color" if-exist="scuola_s"><span class="scuola" content="scuola_s"></span><span> - </span><span class="area" content="areaLabel_s"></div>
+                <div class="title" content="label"></div>
+                <div if-exist="format_s"><span class="format" content="format_s"></span></div>
+                <div if-exist="livelloscolastico_s"><span class="livello" content="livelloscolastico_s"></span></div>
+                <div if-exist="annoscolastico_s"><span class="anno" content="annoscolastico_s"></span></div>
+               
+                <div class="more">
+                    <div class='bott'>
+                        <!-- <div if-exist="abstract_s">
+						<div class="buttonDescr openOnClick" openOnClick="true" type="read" dest="div_descr" openLabel=" Leggi abstract" closeLabel=" Chiudi abstract"></div>
+						</div> -->
+                        <div><div class="buttonLink openOnClickLens" openOnClick="true" type="read" dest="div_link" openLabel=" Link al materiale" closeLabel=" Nascondi link"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="short" content="short_s"></div>
+				<div class="div_sino box" value="div_sino" hide="false">Sinossi</div>
+                <div class="div_descr box" value="div_descr" content="abstract_s" hide="false"></div>
+                <div class="div_link box" value="div_link" hide="true">
+                    <div>Link al materiale:</div>
+                    <div class="body" externalObj="true" idField="link_s" fieldFKey="esperieza_sSingle" externalCat="link" sortby="zindex_i%20asc">
+                        <div></div><!-- IL COD HTML QUI DENTRO è HARDCODED-->
+                    </div>
+                </div>
+                
+                <div if-exist="scuola_s"><span class="scuola"></span><span></span><span class="area"></div>
+            </div>
+        </div>
+   </div>
+   
+	<!--  D.T. Begin - aggiunta la lens per il tipo "document" -->
+	<!-- 
+	<div id="lensDocument" class="lens" role="lens"  enableCheckList="true" itemtype="document">
+        <div class="container" val-content="id">
+           
+            <img class="cover" prefisso="http://hoc13.elet.polimi.it/policulture/files/images/thumb/small/" src-content="cover"/></div>
+            <div class="float">
+				<div class="lens_title_color" if-exist="scuola_s"><span class="scuola" content="scuola_s"></span><span> - </span><span class="area" content="areaLabel_s"></div>
+                <div class="title" content="label"></div>
+                <div if-exist="format_s"><span class="format" content="format_s"></span></div>
+                <div if-exist="livelloscolastico_s"><span class="livello" content="livelloscolastico_s"></span></div>
+                <div if-exist="annoscolastico_s"><span class="anno" content="annoscolastico_s"></span></div>
+               
+                <div class="more">
+                    <div class='bott'>
+                        <div><div class="buttonLink openOnClickLens" openOnClick="true" type="read" dest="div_link" openLabel=" Link al materiale" closeLabel=" Nascondi link"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="short" content="short_s"></div>
+				<div class="div_sino box" value="div_sino" hide="false">Sinossi</div>
+                <div class="div_descr box" value="div_descr" content="abstract_s" hide="false"></div>
+                <div class="div_link box" value="div_link" hide="true">
+                    <div>Link al materiale:</div>
+                    <div class="body" externalObj="true" idField="link_s" fieldFKey="esperieza_sSingle" externalCat="link" sortby="zindex_i%20asc">
+                        <div></div>
+                    </div>
+                </div>
+                
+                <div if-exist="scuola_s"><span class="scuola"></span><span></span><span class="area"></div>
+            </div>
+                    
+        
+        </div>
+   </div>
+     -->
+    <!--  D.T. End -->
+
+</body>    
+</html>

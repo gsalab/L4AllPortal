@@ -1,0 +1,69 @@
+table td{
+    border: 4px solid;
+}
+
+
+table td.item img{
+    display:none;
+}
+
+table td.item.on {
+	pointer: cursor;
+}
+
+table td.item.on img{
+    display:block;
+}
+
+.index{
+    color:white;
+    position:relative;
+    margin-top:5px;
+    height: 50px;
+}
+
+.index div{
+    display:inline;
+    }
+    
+.index > div{
+    display:inline;
+    }    
+    
+.index > div:first-child{
+   position:relative;
+   top: 10px;
+}
+
+.index img{
+   position:relative;
+   top: 10px;
+}
+
+.index .num {
+    left: 50px;
+    position: absolute;
+    z-index: 50;
+}
+
+.index div.num div.pageNum.on {
+    cursor: pointer;
+}
+.index div.num div.pageNum {
+    float: left;
+    margin-right: 10px !important;
+}
+
+.index div.num .pageNum.current {
+    color: blue;
+}
+
+.index div.num .pageNum.current div.pageHisto{
+    background-color: blue !important;
+}
+
+.sep{ font-size: 150%; text-align:center;}
+.sep div{ display:inline; position:relative;}
+.sep .right{ margin-right: 5px; float:right;}
+.sep .left{ margin-left: 5px; float:left;}
+

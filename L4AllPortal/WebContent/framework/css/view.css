@@ -1,0 +1,197 @@
+#view{
+   /* position: fixed;*/  /*WS commentato per farlo rientrare nel nuvo layout a a panelli */  
+   overflow-y: scroll;
+}
+
+#view .viewTop{
+    background-color: #fff;
+    height: 30px;
+    position: relative;
+	padding:5px 0;
+}
+
+
+#view .viewTop .count{
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    color: black;
+    height: 28px;
+    padding: 0 !important;
+    position: relative;
+    left: 5px;
+    top: 0px !important;
+    width: 80px;
+	border-radius: 4px;
+
+
+    -moz-box-shadow: 1px 1px 3px #333;
+    -webkit-box-shadow: 1px 1px 3px #333;
+    box-shadow: 1px 1px 3px #333;
+
+
+}
+
+#view .viewTop .count .inner{
+    height: 28px;
+    position: relative;
+	color:#757575;
+}
+
+#view .viewTop .count .inner a{
+    position: relative;
+    top: 3px;
+    left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#view .viewTop .selection{
+     position: absolute; 
+     top:10px;
+     left: 220px; 
+	
+
+}
+
+#view .viewTop .selection > span{
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    color: white;
+    font-style: italic;
+    padding: 5px;
+	background-color: #808080;
+	 border: 1px solid #676767;
+}
+
+#view .viewTop .selection  span.currentSelection{
+    background-color: #999999;
+    border: 1px solid #676767;
+    color: white;
+    font-style: italic;
+    padding: 5px;
+}
+
+#view .viewTop .selection  span.currentSelection .arrow{
+    padding-left: 5px;
+}
+
+
+
+#view .viewTop .selection ul {
+    padding: 0px;
+    list-style: none;
+    font-style: italic;
+    border: 1px solid black;
+    background-color: #999999;
+    display: none;
+	color: white;
+	margin:6px 0 0 0;
+}
+
+
+#view .viewTop .highlight{
+     position: absolute; 
+     top:10px;
+     right: 20px;  
+}
+
+#view .viewTop .highlight > span{
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    color: white;
+    font-style: italic;
+    padding: 5px;
+	background-color: #808080;
+	 border: 1px solid #676767;
+}
+
+#view .viewTop .highlight  span.currentSelection{
+    background-color: #999999;
+    border: 1px solid #676767;
+    color: white;
+    font-style: italic;
+    padding: 5px;
+}
+
+#view .viewTop .highlight ul {
+    padding: 0px;
+    list-style: none;
+    font-style: italic;
+    border: 1px solid black;
+    background-color: #999999;
+    display: none;
+	color: white;
+	margin: 6px 0 0 0;
+}
+#view .viewTop li {
+	line-height:20px;
+	padding:3px;
+	
+}
+#view .viewTop li:hover {
+	background-color:#757575;
+	
+}
+
+#view .viewTop .highlight span.currentSelection .arrow{
+    padding-left: 5px;
+}
+
+#refraso{
+    width: 98%;
+    padding: 5px;
+	margin-top: 13px;
+	float:left;
+}
+
+#refrasoNumber{
+    
+    margin-top: 5px;
+    padding: 5px;
+	float:left;
+}
+
+#refrasoNumber .count{
+    background-color: white;
+    border: 1px solid #676767;
+    color: black;
+    height: 28px;
+    padding: 0 !important;
+    position: relative;
+    left: 5px;
+    top: 0px !important;
+    width: 80px;
+	border-radius: 2px;
+}
+
+#refrasoNumber .count .inner{
+    background-color: #BFBFBF;
+    height: 28px;
+    position: relative;
+}
+
+#refrasoNumber .count .inner a{
+    position: relative;
+    top: 3px;
+    left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#refraso .legenda{
+    font-weight: bold;
+    }
+    
+#refraso .body{
+    margin-left: 5px;
+    font-weight: bold;
+    font-style: italic;
+    }
+
+#view .viewTop .currentSelection{cursor:pointer}
+#view .viewTop li{cursor:pointer}
+
+#banner .float img{cursor: pointer}
+

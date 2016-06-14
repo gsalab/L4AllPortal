@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Untitled Document</title>
+    <link rel="stylesheet" type="text/css" href="style/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="style/l4all.css"/>
+    <style>
+.formContainer {
+	margin:auto;
+	width:300px;
+}
+.loginTitle {
+	background:#B81A18;
+	line-height:40px;
+	padding: 0 20px;
+	color:#FFF;
+	width:100%;
+	font-size:16px;
+}
+.loginTitle a {
+	color:#FFF;
+}
+.loginClose {
+	float:right;
+	right:0px;
+	top:0px;
+	line-height:40px;
+}
+.loginContent {
+	background:#F1F2F2;
+	line-height:40px;
+	padding: 0 20px;
+	color:#000;
+	width:100%;
+	font-size:16px;
+}
+.loginForm {
+	padding: 20px;
+	display:table;
+	margin:auto;
+}
+.loginContent .loginButton {
+	background:#B81A18;
+	border:none;
+	padding:5px 10px;
+	color:#FFF;
+}
+.loginFooter {
+	background:#fff;
+	padding: 20px;
+	color:#000;
+	width:100%;
+	font-size:16px;
+	/*height:50px;*/
+		text-align:center;
+}
+.loginFooter a {
+	color:#B81A18;
+}
+.registrationForm {
+	padding: 20px;
+	display:table;
+	display:none;
+	margin:auto;
+}
+</style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script>
+    
+    function showRegistration(){
+		$('.loginForm').css('display','none');
+		$('.registrationForm').css('display','table');
+		$('.loginTitle').html('Registrati<div class="loginClose"><a href="#">X</a></div>');
+		$('.loginFooter').html('Possiedi un account? <a href="javascript:showLogin();">Login</a>');
+	}
+    function showLogin(){
+		$('.loginForm').css('display','table');
+		$('.registrationForm').css('display','none');
+		$('.loginTitle').html('Login<div class="loginClose"><a href="#">X</a></div>');
+		$('.loginFooter').html('Non sei ancora registrato? <a href="javascript:showRegistration();">Registrati</a>');
+	}
+    </script>
+    </head>
+
+    <body>
+    <div class="formContainer">
+      <div class="loginTitle">Login
+        <div class="loginClose"><a id="closeLogin" href="javascript:hideLogin();">X</a></div>
+      </div>
+      <div class="loginContent">
+        <div class="loginForm">
+          <form action="http://localhost:8080/l4allapp/l4all-rest/login/json" method="GET">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                <td colspan="2" class="loginError"><div id="loginStatus"></div></td>
+              </tr>
+              <tr>
+                <td><label class="label" for="login-email">Email:</label></td>
+                <td><input name="email" id="login-email" type="text" /></td>
+              </tr>
+              <tr>
+                <td align="">Password:</td>
+                <td><input name="password" id="login-password" type="password" /></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td align="right"><input type="button" class="loginButton"value="accedi" onclick="javascript:RestInterface.doLogin()" /></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <div class="registrationForm">
+          <form action="http://localhost:8080/l4allapp/l4all-rest/registration/json" method="POST">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><label class="label" for="login-email">Nome:</label></td>
+                <td><input name="nome" id="registrazione-nome"  type="text"></td>
+              </tr>
+              <tr>
+                <td align="">Cognome:</td>
+                <td><input name="cognome" id="registrazione-cognome"  type="text"></td>
+              </tr>
+              <tr>
+                <td align="">Email:</td>
+                <td><input name="email" id="registrazione-email"  type="text"></td>
+              </tr>
+              <tr>
+                <td>Password:</td>
+                <td><input name="password" id="registrazione-password"  type="password"></td>
+              </tr>
+              <tr>
+                <td>Conferma password:</td>
+                <td><input name="conferma-password" id="registrazione-conferma-password"  type="password"></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td align="right"><input type="button" class="loginButton"value="registrati" onclick="javascript:RestInterface.doRegistration()" /></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+
+      </div>
+      <div class="loginFooter">Non sei ancora registrato? <a href="javascript:showRegistrationForm();">Registrati</a></div>
+    </div>
+    </body>
+</html>

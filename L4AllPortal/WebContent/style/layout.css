@@ -1,0 +1,76 @@
+
+html{
+    background-color: #C4C4C4;
+}
+
+hr{
+  /*clear:both;*/
+  background-color: black;
+  height: 5px;
+  margin:0px;
+  margin-top:5px;
+  padding: 0px;
+}
+
+#menu_facet, #facet_left, #facet_center, #facet_rigth,#facet_bottom{
+   /* background-color: rgb(102,102,102);*/
+    }
+
+#menu_facet{
+    /*position:absolute; WS commentato per farlo rientrare nei tab UI*/
+    right:8px;
+    top:8px;
+    /*padding:10px; WS commentato per farlo rientrare nei tab UI*/
+    display:block;
+    /*width:400px;*/
+    z-index:505;
+}
+
+.tab-toolbar{
+	height:40px;
+	width:100%;
+	padding:10px 0 0 0;
+}
+.tab-toolbar img{
+	float:right;
+	cursor:pointer;
+}
+    
+#facet_top > div{
+    padding:0px;
+}
+
+#facet_top{
+    margin-top: 5px;
+    }
+
+#facet_left{
+    width:32%;
+    float:left;
+}
+
+#facet_center{
+    width:32%;
+    float:right;
+    margin-right:2%;
+}
+    
+#facet_right{
+    float:right;
+    width:32%;
+} 
+
+
+div.facet-header-title:hover {text-decoration: none; background: #ffffff; z-index: 6; }
+div.facet-header-title div {position: absolute; left: -9999px;
+  margin: 20px 0 0 0px; padding: 3px 3px 3px 3px;
+  border-style:solid; border-color:black; border-width:1px; z-index: 6;
+  color: black; font-style:normal; font-weight:normal;}
+div.facet-header-title:hover div {left: 0%; background: #ffffff;} 
+div.facet-header-title div {position: absolute; left: -9999px;
+  margin: 4px 0 0 0px; padding: 3px 3px 3px 3px; 
+  border-style:solid; border-color:black; border-width:1px;}
+div.facet-header-title:hover div {margin: 20px 0 0 170px; background: #ffffff; z-index:6;} 
+
+
+/* form pannelli */

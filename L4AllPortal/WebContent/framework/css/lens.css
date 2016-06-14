@@ -1,0 +1,417 @@
+.lens{
+    display:none;
+}
+
+.lens.built, .lens.built{
+    display:block;
+}
+
+.built{
+    width: 80%;
+    position: absolute;
+    top:50px;
+    left:10%;
+    background-color:white;
+    /* border: 1px solid black;
+    border-radius: 5px 5px 5px 5px; */
+    padding: 10px;
+}
+
+.top_label_lens{
+background-color:#FF3300;
+color:white;
+height:30px;
+font-size: 28px;
+}
+.top_label_lens .label{
+padding-left: 10px;
+}
+
+.built .closeLens{
+    float:right;
+    cursor:pointer;
+}
+
+.built .openOnClick .openOnClickLens{
+    cursor:pointer;
+}
+
+.built.lensperson{
+    width: 60%;
+    top: 70px;
+    left:20%;
+    background-color: #cccccc;
+}
+
+[openlens]{
+    cursor: pointer;
+}
+
+.ita{
+    font-style:italic;
+}
+
+.h3{
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.lens.built .wishListBott{
+    width:20px;
+    position:relative;
+    float:right;
+    z-index: 2000;
+    cursor:pointer;
+}
+
+
+.lens.built .title{
+        word-wrap:break-word;
+}
+
+#reviewWishList{
+    position:absolute;
+    z-index:7000;
+    position:fixed;
+}
+#reviewWishList .opaco{
+    background-color: #000000;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    
+}
+
+#reviewWishList .containerW{
+   padding: 10px;
+   position:absolute;
+   top:20px;
+   width: 800px;
+   height: 550px;
+   background-color: white;
+   
+   text-align:center;
+}
+
+#reviewWishList .containerW .close{
+   float:right;
+}
+
+
+
+#reviewWishList .containerW.nowish > div{
+   position:relative;
+   left: 50px;
+   top:200px;
+   width: 700px;
+}
+
+#reviewWishList .nowish .addAll{
+   margin-top: 20px;    
+}
+
+ #reviewWishList .clearWish{
+     width: 30px;
+}
+
+#reviewWishList .containerW.nowish .h img{
+   width: 20px;
+}
+#reviewWishList .exAll, #reviewWishList .exportWish {
+   cursor: pointer;
+}
+#reviewWishList h3{
+   margin-top: 0px;
+   margin-bottom:0px;    
+}
+
+#reviewWishList .bottom {
+  position:relative; 
+}
+
+#reviewWishList .bottom .dx{
+   padding-top: 20px;
+   text-align: left;
+   position:absolute;
+   left: 50%;
+   top:0px;
+   width: 50%;    
+}
+
+#reviewWishList .bottom .sx{
+   padding-top: 20px;
+   text-align: left;
+   width: 50%;    
+}
+#reviewWishList .containerW .h.exAll img, #reviewWishList .containerW .h.saveWish img,#reviewWishList .containerW .h.addAll img , #reviewWishList .containerW .download .exWish img{
+    position: relative;
+    top:10px;
+    width: 40px;
+}
+
+#reviewWishList .containerW .top .sx >img {
+ float:right;   
+  height: 30px;
+  margin-left:5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+#reviewWishList .containerW .top .sx > h3 {
+ clear:both;   
+}
+
+#reviewWishList .containerW .top .sx li{cursor: pointer}
+
+#reviewWishList .containerW .top .sx li.selected span{
+    background-color: blue;
+    color: white;
+}
+
+#reviewWishList .containerW .top .sx{
+    text-align:left;
+    width: 230px;
+}
+
+#reviewWishList .containerW .top .sx ul{
+    margin-top: 0px;
+}
+
+#reviewWishList .containerW .top .sx .download h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#reviewWishList .containerW .top .dx{
+    position: absolute;
+    top:90px;
+    left: 260px;
+    width: 530px;
+    height:400px;
+    text-align:left;
+    background-color: #dbdbdb;
+}
+
+#reviewWishList .containerW .top .dx > img{
+    position:absolute;
+    top: 210px;
+    left: 10px;
+    width: 20px;
+}
+#reviewWishList .containerW .top .dx > img.aR{
+    left: 500px;
+}
+
+#reviewWishList .containerW .top{
+
+
+}
+#reviewWishList hr.vertical {
+position: absolute;
+top:5px;
+left:30%;
+height: 550px;
+border: 2px solid black;
+width: 0;
+
+}
+
+#reviewWishList .containerW .top .sx  div.first{
+    padding-top: 10px;
+    text-align:left;
+    width: 220px;
+    height: 450px;
+    overflow: auto;
+}
+
+#reviewWishList .containerW .top .dx .built{
+    top:10px;
+}
+
+#reviewWishList .containerW .top .dx .built .closeLens{
+    display:none;
+}
+
+#reviewWishList .containerW .top .sx > div.download{
+    text-align:center;
+}
+
+.containerW h3.addAll{
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+
+#reviewSaveWish{
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 2001 !important;
+}
+
+#reviewSaveWish .opaco{
+    background-color: #000000;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    width: 100%;
+    height: 100%;
+}
+
+#reviewSaveWish .contSave{
+    background-color: white;
+    position:absolute;
+    top: 50px;
+    left: 110px;
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+}
+
+#reviewSaveWish .contSave .topS{
+    width: 100%;
+    height: 160px;
+    background-color: yellow;
+}
+
+#reviewSaveWish .contSave .bottomS{
+    width: 100%;
+    height: 230px;
+}
+
+#reviewSaveWish .contSave .bottomS .des{
+    width: 60%;
+    height: 100%;
+    float:right;
+    text-align:left;
+}
+
+#reviewSaveWish .contSave .bottomS .des .pointer{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+#reviewSaveWish .contSave .bottomS .des .dettaglio{
+    padding: 10px;
+    border: 1px solid black;
+    position:relative;
+    top: 20px;
+}
+#reviewSaveWish .contSave .bottomS .des .dettaglio p{
+    max-height: 100px;
+    overflow:auto;
+    margin-top:3px;
+    margin-bottom: 5px;
+}
+#reviewSaveWish .contSave .bottomS .des .dettaglio .note{
+   padding-top:5px;
+}
+#reviewSaveWish .contSave .bottomS .sin .claearSavedWish{ width: 40px; position:relative; top:10px;}
+
+#reviewSaveWish .contSave .bottomS .sin{
+    width: 40%;
+    height: 100%;
+    text-align:left;
+    padding-left: 10px;
+}
+
+#reviewSaveWish .contSave .bottomS .sin li.selected{
+    background-color: blue;
+    color:white;
+}
+
+#reviewSaveWish .contSave .bottomS .sin li{
+    cursor: pointer;
+    width: 150px;
+}
+
+
+.div_link li > *{
+    float:left;
+}
+
+.div_link .downlaod img{
+    cursor: pointer;
+    height: 25px;
+    margin-left: 5px;
+    position: relative;
+    top: -7px;
+}
+
+.div_link img.preview{
+    cursor: pointer;
+    height: 20px;
+    margin-left: 5px;
+    position: relative;
+    top: -2px;
+}
+
+.div_link img.play, .div_link img.narrazione{
+    cursor: pointer;
+    width: 20px;
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.div_link li{
+    position:relative;
+    cursor: default;
+    clear:both;
+}
+
+.div_link li.doc > div[title="Trascrizione dell'intervista delle Expectations"]{
+    width:161px;
+}
+
+#preview{
+    display: block;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:200010;
+}
+
+#preview .opaco{
+    background-color: #000000;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    width: 100%;
+    height: 100%;
+}
+
+#player{
+    position:relative;
+    left: 20px;
+}
+
+#preview .contPreview{
+   position:absolute;
+   top:0px;
+   left:0px;
+    background-color: white;
+}
+
+#preview .contPreview .close{
+   cursor: pointer;
+   position: absolute;
+   top: 2px;
+   width: 20px;
+   background-color: white;
+}
+
+
+#preview .contPreview .pezza{
+   cursor: pointer;
+   position: absolute;
+   left: 4px;
+   top: 4px;
+   width: 200px;
+   height:20px;
+   background-color: #CCCCCC;
+}
+
+#reviewWishList .h.empty{
+  margin-top: 40px;  
+}
+
+

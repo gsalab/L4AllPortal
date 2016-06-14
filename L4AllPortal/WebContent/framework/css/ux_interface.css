@@ -1,0 +1,241 @@
+/*WS 1112 LOGIN REGISTRAZIONE*/
+#showOverlay{
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 2001 !important;
+}
+
+.formContainer{
+	left: 50%;
+	margin: auto;
+	position: fixed;
+	top: 50px;
+	color: #333;
+}
+
+.loginTitle{
+	background:#B81A18;
+	line-height:40px;
+	padding: 0 20px;
+	color:#FFF;
+	width:100%;
+}
+#showOverlay .loginTitle a:link{
+	color:#FFF;
+}
+.loginClose{
+	float:right;
+	right:0px;
+	top:0px;
+	line-height:40px;
+}
+.loginContent{
+	background:#F1F2F2;
+	line-height:40px;
+	padding: 0 20px;
+	color:#000;
+	width:100%;
+}
+.loginContent table td{
+	border:0px;
+	color:#333;
+	text-align:right;
+	padding:0 5px;
+}
+.loginForm{
+	padding: 20px;
+	display:table;
+	margin:auto;
+}
+.loginContent .loginButton{
+	background:#B81A18;
+	border:none;
+	padding:5px 10px;
+	color:#FFF;
+}
+.loginFooter{
+	background:#fff;
+	padding: 20px;
+	color:#000;
+	width:100%;
+	/*height:50px;*/
+	text-align:center;
+}
+.loginFooter a:link{
+	color:#B81A18;
+}
+.registrationForm{
+	padding: 20px;
+	display:table;
+	display:none;
+	margin:auto;
+}
+.recuperaForm{
+	padding: 20px;
+	display:table;
+	display:none;
+	margin:auto;
+}
+.checkWait{
+	padding: 20px;
+	display:table;
+	display:none;
+	margin:auto;
+}
+#showOverlay .error{
+	text-align:center;
+	color:#F00;
+}
+/*WS 1112 LOGIN REGISTRAZIONE*/
+
+/* FORM SALVATAGGIO */
+#save, #load {
+	text-align: left;
+}
+
+/* PANNELLI A TAB */
+.form-container{ /* contenitore delle form*/
+	padding:10px;
+	color:#414042;
+	
+}
+.form-container table td{
+	border:none;
+}
+.form-container input, textarea{
+	color:#757575;
+	font-family:Arial, Helvetica, sans-serif;
+	border:none;
+	margin:2px 0;
+	font-size:11px;
+}
+
+.form-radio-item{
+	line-height:30px;
+	color:#757575;
+	padding:0 5px;
+}
+
+.form-container-title{
+	color:#231F20;
+	line-height:30px;
+	font-style:italic;
+	font-weight:bold;
+}
+.form-treeview{
+	background:#ffffff;
+	padding:10px;
+	margin: 0 0 10px 0;
+}
+.form-btn{
+	padding:7px 15px 7px 50px;
+	color:#FFF;
+	border:none;
+	margin:5px 0px;
+	text-align:left;
+	cursor:pointer;
+}
+.form-btn-grey{
+	background:#939598;
+}
+.form-btn-red{
+	background:#f4553b;
+}
+.form-separator{ /* contenitore delle form*/
+	background:url(../script/images/form-separator-bg.jpg) repeat-x;
+	width:100%;
+	height:2px;
+}
+.jstree-default .jstree-focused{/* forza il bg binaco nel plugin treeview*/
+	background:#FFF;
+}
+.jstree a{
+	color:#F00;
+}
+
+/* CUSTOMIZZAZIONE TABS E ACCORNIO */
+.ui-accordion .ui-accordion-header{
+	background:#B81A18;
+	color:#fff;
+	line-height:30px;
+}
+.ui-accordion .ui-accordion-content{
+	padding:0;
+	background:#DDD;
+}
+.ui-tabs .ui-tabs-panel{
+	padding:0;
+}
+.ui-tabs .ui-tabs-nav li {
+	width:95px;
+	height:auto;
+	background:#B7B7B7;
+	color:#58595B;
+	text-align:center;
+}
+.ui-tabs .ui-tabs-nav li a {
+	color:#58595B;
+	width:100%;
+	padding:0;
+	height:inherit;
+	padding:45px 0 5px 0;
+}
+.ui-tabs .ui-tabs-nav li:hover {
+	background:#DDDDDD;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	background:#DDDDDD;
+}
+.ui-tabs .ui-tabs-nav li.ui-state-disabled{
+	opacity:0.3;
+	filter:alpha(opacity=30);
+}	
+.ui-tabs .ui-tabs-nav li.ui-state-disabled:hover{
+	background:#B7B7B7;
+
+}
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a{
+	cursor:default;}
+#ui-id-1{
+	background:url(../script/images/tab-1.png) center top no-repeat;
+}
+#ui-id-2{
+	background:url(../script/images/tab-2.png) center top no-repeat;
+}
+#ui-id-3{
+	background:url(../script/images/tab-3.png) center top no-repeat;
+}
+#ui-id-4{
+	background:url(../script/images/tab-4.png) center top no-repeat;
+}
+#ui-id-5{
+	background:url(../script/images/tab-5.png) center top no-repeat;
+}
+
+/* FORM STAPA WIDGET */
+#widgetPdfContainer {
+	text-align: left;
+}
+.widgetPdfContent{
+	background:#F1F2F2;
+	padding: 20px;
+	color:#000;
+	width:100%;
+	height: 500px;
+    overflow: auto;
+}
+
+/*GENERICI*/
+
+.btn-disabled{
+	opacity:0.3;
+	filter:alpha(opacity=30);
+	cursor:default;
+}
+
+.middle-east {
+	background: white;
+}

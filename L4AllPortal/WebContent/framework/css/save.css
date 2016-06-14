@@ -1,0 +1,99 @@
+#reviewSaveList{
+    position:absolute;
+    z-index:7000;
+    position:fixed;
+}
+#reviewSaveList .opaco{
+    background-color: #000000;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    
+}
+
+#reviewSaveList .containerS{
+   padding: 10px;
+   position:absolute;
+   top:20px;
+   width: 800px;
+   height: 550px;
+   background-color: white;
+   text-align:center;
+}
+
+#reviewSaveList .containerS .close{
+   float:right;
+}
+
+#reviewSaveList .containerS .top{
+   height: 200px;
+   
+}
+
+
+#reviewSaveList .containerS .bottom{
+   text-align:left;
+   position:relative;
+   
+}
+
+#reviewSaveList .containerS .bottom .sx{
+   width:30%;
+}
+
+#reviewSaveList .containerS .bottom .sx li span{
+   padding-left:5px;
+   padding-right:5px;
+   cursor:pointer;
+}
+
+#reviewSaveList .containerS .bottom .sx li.selected span{
+   background-color:blue;
+   color:white;
+}
+
+
+#reviewSaveList .containerS .bottom .dx{
+   position:absolute;
+   padding: 10px;
+   left: 32%;
+   top:0px;
+   width:68%;
+}
+
+#reviewSaveList hr.vertical {
+position: absolute;
+left:30%;
+top:0px;
+height: 300px;
+border: 1px solid #676767;
+}
+
+#reviewSaveList hr {
+border: 1px solid #676767 !important;
+background-color: #676767;
+    height: 0px;
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+#reviewSaveList .containerS .bottom .dx .ripristina , #reviewSaveList .containerS .bottom .dx .delSnapshot{
+cursor:pointer;    
+}
+
+#reviewSaveList .clearCookies{
+cursor:pointer;
+width:30px;
+position:relative;
+left: 10px;
+top:5px;    
+}
+
+#reviewSaveList button span{
+    font-weight: bold;
+    font-size:130%;
+    cursor:pointer;
+}
+
+#reviewSaveList button{
+    cursor:pointer;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+
+  <div>
+  
+  <form id='save_$ITEM_TYPE$'>
+  
+    <div class="form-container">
+      <label for="cosa"><span class="form-container-title">Criteri di selezione</span></label>
+      <br/>
+      <input type="radio" name="cosa" value="query" id="cosa_query_$ITEM_TYPE$"/><span class="form-radio-item"><label for="cosa_query_$ITEM_TYPE$">Selezione</label></span><br/>
+      <input type="radio" name="cosa" value="risultati"/ id="cosa_risultati_$ITEM_TYPE$"/><span class="form-radio-item"><label for="cosa_risultati_$ITEM_TYPE$">Risultato</label></span>
+      <input size='4' type='hidden' name='num-selezione' /><br/>
+      <input type="radio" name="cosa" value="wishlist"/ id="cosa_wishlist_$ITEM_TYPE$" /><span class="form-radio-item"><label for="cosa_wishlist_$ITEM_TYPE$">Carrello</label></span>
+      <input size='4' type='text' name='num-carrello'  disabled="disabled"/><br/>
+    </div>
+    
+    <div class="form-separator"></div>
+    
+    <div class="form-container">
+      <div class="treeview  form-treeview">
+      </div>
+      <button type='button' class="form-btn btn-crea" onclick='nuovoGruppo()'>Crea un nuovo gruppo per il salvataggio</button>
+      <input type="hidden" name="selected-group"/>
+    </div>
+    
+    <div class="form-separator"></div>
+    
+    <div class="form-container">
+    
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width='120'>Nome salvataggio:</td>
+          <td  align="right"><input class='label' accept-charset = 'UTF-8' type='text' name='saveLabel' style='width:100%;' /></td>
+        </tr>
+        <tr>
+          <td>Note:</td>
+          <td align="right"><textarea class='note' accept-charset = 'UTF-8' name='note' cols='40' rows='6' style='width:100%;' ></textarea></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td  align="right"><button type='button'  class="form-btn form-btn-red btn-save" style="padding:7px 15px;" onclick='save()'>Salva</button></td>
+        </tr>
+      </table>
+      
+    </div>
+    
+  </form>
+  
+  </div>
+</body>
+</html>

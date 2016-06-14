@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="x-ua-compatible" content="IE=9" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <meta name="google" value="notranslate"/>
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE"/> 
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE"/>
+	
+	<!-- META tags di indicizzazione -->
+	<META NAME="keywords" CONTENT="l4all, learning4all, learningforall, learningforall portal, learning4all portal, l4all portal, l4allportal.polimi.it">
+	<META NAME="description" CONTENT="Portal with all the experiences of the Learning For All project">
+    
+    <!--Librerie varie di Google (grafici, mappe, jquery.min) -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAZ4JBxqo876alKkqxW5OM10f5lQRKI5kc&sensor=false&language=it"> </script>
+
+    <!--Script che carica il framework -->
+    <script src="framework/script/mainApi.js?t=325353" charset="utf-8"></script>
+    
+    <!-- NOTA: Tutti gli alri script vengono caricatit da mainApi.js -->  
+	
+	<script type="text/javascript"><!--
+    function ReplaceContentInContainer(id,content) {
+    var container = document.getElementById(id);
+    container.innerHTML = content;
+    }
+    //--></script>
+    
+	
+    <title>COMFIT Portal</title>
+    <link rel="stylesheet" type="text/css" href="style/l4all.css"/>
+    <link rel="stylesheet" type="text/css" href="style/layout.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="theme-comfit/css/ux_interface.css"/>
+    
+
+</head>
+<body>
+    <!--Configurazione iniziale del framework -->
+    <div role="collection" itemTypes="informazioni,luogo" loadAttrTitle="true" enablePDF="true" pdfServlet="http://hoc13.elet.polimi.it/pdf/comfit.php" enableWishList="true"  enableSave="true" facetLimit="170" enableOffline="true"  enableLogin="false"></div>
+    <div role="solr_url" value="http://hoc5.elet.polimi.it:8080/comfit/select/"></div> <!--indirizzo del Server-->
+    <!-- <div role="rest_url" value="http://localhost:8080/l4allapp"></div> --> <!-- indirizzo dei servizi REST -->
+    <!-- <div role="application_url" value="http://localhost:8080/l4all"></div> --> <!-- indirizzo dei servizi REST -->
+    <div role="rest_url" value="http://l4allportale.polimi.it:8080/l4allapp"></div> <!-- indirizzo dei servizi REST -->
+    <div role="application_url" value="http://l4allportale.polimi.it:8080/l4all2"></div> <!-- indirizzo dell'applicazione -->
+    <div role="enableRefraso" itemType="informazioni" string="Documenti selezionati:" all="Tutti i documenti"></div>
+    <div role="enableRefraso" itemType="luogo" string="Luoghi selezionati:" all="Tutti i luoghi"></div>  
+ 	<div role="linkTaxonomy" itemType="informazioni" idField="ID_info" crossFields="Devoted,Extended,Marginal" foreignIdField="LuogoInformazioni"></div>
+ 	<div role="linkTaxonomy" itemType="luogo" idField="ID_luogo" crossFields="Devoted,Extended,Marginal" foreignIdField="LuogoInformazioni"></div>
+ 	
+    <!--Inizio design del layout a pannelli -->
+    <div class="outer-center">
+        <!------------------------------------------------------------  --> 
+    	<!--CONTENITORE CENTRALE  convas primario, secondario e toolbar -->
+        <!------------------------------------------------------------  --> 
+        <div class="middle-center">
+        
+        	<!-- CANVAS HEADER toolbar -->
+        	<!--<div class="ui-layout-north"> 
+					possibilita di inserire qua l'header, da valutare nel montaggio grafica finale
+            </div>-->
+             
+            <!--CANVAS PRIMARIO -->
+            <div class="inner-center">
+            	<!-- Header -->   
+                <div id="banner">  
+                  <a href="http://www.learningforall.it/" style="float:left;"><img src="theme-comfit/images/logo.png" style="height:50px;"></a>
+                  <div id="taxonomy-switcher"></div>
+                  <div class="float" style="float:right;">
+                    <!--<img  onclick="window.location.href=window.location.href" class="clearAll" title="Torna alla stato iniziale" src="theme/images/clear_filters.png">-->
+                   
+                    <img  onclick="window.location.href=window.location.href" title="Ricarica la pagina" src="theme/images/refresh.png"/>
+                  </div>
+                </div>
+                
+                <!-- Contenitore della Canvas di visualizzazione -->    
+                <div id="view">
+                         
+                         <div id="mosaicview"
+                             role="canvas"
+                             label="Mosaico"
+                             viewClass="MosaicView"
+                             hexpressions="Elemento_tassonomia_info_1,Elemento_tassonomia_info_2,Elemento_tassonomia_info_3" 
+                             hlabel="Elemento tassonomia 1,Elemento tassonomia 2,Elemento tassonomia 3"
+                             idNarr="id" 
+                             row="20"
+                             col="20"
+                             title="label"
+                             shape="Elemento_tassonomia_info_1"
+                             legendaShape="Elemento tassonomia documenti 1:"
+                             etichettaIcone="label"> 
+                        </div>
+                         
+                         <div id="mapPalliniView"
+                             role="canvas"
+                             label="Mappa"
+                             viewClass="MapView"
+                             mapCenterLat="42.90816"
+                             mapCenterLng="12.912597"
+                             mapZoom="6"
+                             proxy="region_s,area_s"
+                             proxyLabel="Regione,Provincia"
+                             proxyZoom="6,8"
+                             proxyLookUp="area"
+                             lat= "lat_s"
+                             lng= "lng_s"
+                             hexpressions="none,Elemento_tassonomia_info_1,Elemento_tassonomia_info_2,Elemento_tassonomia_info_3" 
+                             hlabel="Nessun Highlight,Elemento tassonomia 1,Elemento tassonomia 2,Elemento tassonomia 3"                 
+                             overlay="palle"
+                             lenstype="experience"
+                             > 
+                        </div>
+                        <!-- 
+                       <div id="mapCakeView"
+                             role="canvas"
+                             label="Mappa-Torte"
+                             viewClass="MapView"
+                             mapCenterLat="42.90816"
+                             mapCenterLng="12.912597"
+                             mapZoom="6"
+                             proxy="region_s,area_s"
+                             proxyLabel="Regione,Provincia"
+                             proxyZoom="6,8"
+                             proxyLookUp="area"
+                             lat= "lat_s"
+                             lng= "lng_s"
+                             hexpressions="annoscolastico_s,livelloscolastico_s,format_s" 
+                             hlabel="Anno scolastico, Livello Scolastico,Format"
+                             overlay="pie"
+                             lenstype="experience"
+                             > 
+                        </div>
+                         -->
+						              <div id="thumbview"
+                 role="canvas"
+                 label="Thumbnail"
+                 viewClass="ThumbView"
+                 hexpressions="Elemento_tassonomia_info_1,Elemento_tassonomia_info_2,Elemento_tassonomia_info_3" 
+                 hlabel="Elemento tassonomia 1,Elemento tassonomia 2,Elemento tassonomia 3"
+                 idNarr="id" 
+                 row="5"
+                 col="7"
+                 
+                 image="cover"
+                 lenstype="experience"> 
+            </div>
+                </div>   
+                <!-- fine view--> 
+            </div>
+            
+            <!--CANVAS SECONDARIO -->
+            <!-- <div class="inner-east">CONVAS SECONDARIO</div> -->
+    
+        </div> 
+        <div class="middle-east">
+        	<h2 id="titolo-pannello-secondario">Luoghi</h2>
+        	
+        	<div id="viewSecond">
+	        	<div id="listView"
+	                 role="canvas"
+	                 label="Elenco"
+	                 viewClass="ListView"
+	                 hexpressions="Elemento_tassonomia_luogo_1" 
+	                 hlabel="Elemento tassonomia 1"
+	                 idNarr="id" 
+	                 row="20"
+	                 col="20"
+	                 title="label"
+	                 shape="Elemento_tassonomia_info_1"
+	                 legendaShape="Elemento tassonomia 1:"
+	                 etichettaIcone="label"> 
+	            </div>
+            </div>
+            <!-- <div id="viewSecond_informazioni" style="display:none">
+	        	<div id="listView"
+	                 role="canvas"
+	                 label="Elenco"
+	                 viewClass="ListView"
+	                 hexpressions="Elemento_tassonomia_info_1" 
+	                 hlabel="Elemento tassonomia 1"
+	                 idNarr="id" 
+	                 row="20"
+	                 col="20"
+	                 title="label"
+	                 shape="Elemento_tassonomia_info_1"
+	                 legendaShape="Elemento tassonomia 1:"
+	                 etichettaIcone="label"> 
+	            </div>
+            </div> -->
+        </div>
+    </div>
+    
+    <!------------------------------------  --> 
+    <!--CONTENITORE DESTRA  accordion e tab -->
+    <!------------------------------------  --> 
+    <!--WIDGET--> 
+    <div class="outer-east">
+      <!--Accordion INIZIO-->
+      <div id="accordion">
+        <h3>DOCUMENTI
+	        <span class="accordion-tools" id ="tools-informazioni">
+	        	<img id="synch-canvas-informazioni" class="synch-canvas" src="img/synch-canvas.png"></img>
+	        	<img id="link-informazioni" src="img/open-chain.png" onclick="linkToType('informazioni')"></img>
+	        	<div class="tool-buttons-separator"></div>
+	        	<img class="open-close-accordion" src="img/close-accordion.png"></img>
+        	</span>
+        </h3>
+        <!-- <div class="accordion-tools" id ="tools-doc"><img id="link-doc-luoghi" src="img/open-chain.png"></img></div>-->
+        <div itemType="informazioni">
+          <!-- Tabs INIZIO-->
+          <div id="tabs-informazioni" class="tabs">
+            <ul>
+              <li><a href="#tabs-1_informazioni">PARAMETRI</a></li>
+              <li><a href="#tabs-2_informazioni">SALVA</a></li>
+              <li><a href="#tabs-3_informazioni">GESTISCI</a></li>
+              <li><a href="#tabs-4_informazioni">CARRELLO</a></li>
+              <!--<li><a href="#tabs-5">DATASET</a></li>-->
+            </ul>
+            <div id="tabs-1_informazioni">
+            
+                <!-- Menu di esplorazione--> 
+		        <div id="menu_facet">
+		        
+		        	<div id="facet-toolbar_informazioni"  class="tab-toolbar"><img  class="clearAll" title="Elimina tutte le selezioni dei parametri" src="theme/images/clear-widget.png"  style="border-left:0.5px dotted #757575;"/></div>
+		        	
+		            <div id="facet_top">
+		           		
+		           		 <div id="facet_right">
+		           		 	 <div id="facet_sorgente_informazioni" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_info_2"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Fonte"
+		                        cat="Fonte" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="informazioni"
+		                        idField="ID_info">
+		                    </div>
+		                    
+		                    <div id="facet_natura_editoriale" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_info_4"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Proprietà editoriale"
+		                        cat="Propriet\u00e0_editoriale" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="informazioni"
+		                        idField="ID_info">
+		                    </div>
+		                    
+		                    <div id="facet_IndiceAnalitico_informazioni" role="facet"  
+		                        facetClass="Cloud"  
+		                        defaultNum="7" 
+		                        minNum="4"
+		                        maxNum="12" 
+		                        expression="label" 
+		                        changeConj="false" 
+		                        conj="or"
+		                        collapsed="true"
+		                        facetLabel="Indice dei documenti"
+		                        changeRendering="false"
+		                        defaultRendering="absolute"
+		                        enableSort="false"
+		                        defaultSortMode="alphabetic"
+		                        histo="false"
+		                        showNumber="false"
+		                        refraso="true"
+		                        itemType="informazioni"
+		                        idField="ID_info"
+		                        index="true">
+		                    </div>
+		           		 </div>
+		           		 
+		           		 <div id="facet_left">
+		                    
+		                    <div id="facet_centro_informazione" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_info_1"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Centro informazione"
+		                        cat="Centro_informazione" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="informazioni"
+		                        idField="ID_info">
+		                    </div>
+		                    
+		                    <div id="facet_tipo_informazione" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_info_3"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Tipo d'informazione"
+		                        cat="Tipo_d'informazione" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="informazioni"
+		                        idField="ID_info">
+		                    </div>
+		                    
+		                    <div id="facet_area_tematica" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_info_5"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Area tematica"
+		                        cat="Area_tematica" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="informazioni"
+		                        idField="ID_info">
+		                    </div>
+		           		</div>
+		      	</div>
+		      </div>
+			  </div>
+			  
+             	<div id="tabs-2_informazioni">
+	            
+	            METTER QUI I SALVATAGGI
+	            
+	            </div>
+	            <div id="tabs-3_informazioni">
+	            
+	            METTERE QUI APERTURE
+	            
+	            </div>
+	            <div id="tabs-4_informazioni">
+	            
+	            METTERE QUI IL CARRELLO
+	            
+	            </div>
+            </div>
+         </div>
+        <h3> LUOGHI
+	        <span class="accordion-tools" id ="tools-luogo">
+	        	<img id="synch-canvas-luogo" class="synch-canvas" src="img/unsynch-canvas.png"></img>
+	        	<img id="link-luogo" src="img/open-chain.png" onclick="linkToType('luogo')"></img>
+	        	<div class="tool-buttons-separator"></div>
+	        	<img class="open-close-accordion" src="img/open-accordion.png"></img>
+        	</span>
+        </h3>
+        <div itemType="luogo">
+          <!-- Tabs INIZIO-->
+          <div id="tabs-luogo" class="tabs">
+            <ul>
+              <li><a href="#tabs-1_luogo">PARAMETRI</a></li>
+              <li><a href="#tabs-2_luogo">SALVA</a></li>
+              <li><a href="#tabs-3_luogo">GESTISCI</a></li>
+              <li><a href="#tabs-4_luogo">CARRELLO</a></li>
+            </ul>
+            <div id="tabs-1_luogo">
+            
+           		  <!-- Menu di esplorazione--> 
+		        <div id="menu_facet">
+		        
+		        	<div id="facet-toolbar_luogo"  class="tab-toolbar"><img  class="clearAll" title="Elimina tutte le selezioni dei parametri" src="theme/images/clear-widget.png"  style="border-left:0.5px dotted #757575;"/></div>
+		        	
+		            <div id="facet_top">
+		                
+		                    
+		                <div id="facet_right">
+		                    
+		                    
+		                    <div id="facet_categoria_luogo" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_luogo_2"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Categoria"
+		                        cat="categoria" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="luogo"
+		                        idField="ID_luogo">
+		                    </div>
+		                    
+		                    <div id="facet_IndiceAnalitico_luogo" role="facet"  
+		                        facetClass="Cloud"  
+		                        defaultNum="7" 
+		                        minNum="4"
+		                        maxNum="12" 
+		                        expression="label" 
+		                        changeConj="false" 
+		                        conj="or"
+		                        collapsed="true"
+		                        facetLabel="Indice dei luogo"
+		                        changeRendering="false"
+		                        defaultRendering="absolute"
+		                        enableSort="false"
+		                        defaultSortMode="alphabetic"
+		                        histo="false"
+		                        showNumber="false"
+		                        refraso="true"
+		                        itemType="luogo"
+		                        idField="ID_luogo"
+		                        index="true">
+		                    </div>		                    
+		           		</div>
+		           		
+		           		
+		                 <div id="facet_left">
+		                    
+		                    <div id="facet_area_gegrafica" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_luogo_1"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Area geografica"
+		                        cat="area_geografica" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="luogo"
+		                        idField="ID_luogo">
+		                    </div>
+		                    <div id="facet_contesto_luogo" class="ogg" role="facet"
+		                        widgetClass = "ogg"
+		                        facetClass="Hierarchical" 
+		                        expression="Elemento_tassonomia_luogo_3"  
+		                        histo="true" separator="true" 
+		                        collapsible="true"
+		                        scroll="false" 
+		                        collapsed="true"
+		                        refraso="true" 
+		                        collapsed="true"
+		                        facetLabel="Contesto luoghi"
+		                        cat="Contesto" 
+		                        changeRendering="true"
+		                        defaultRendering="absolute"
+		                        changeConj="true" 
+		                        conj="or"
+		                        itemType="luogo"
+		                        idField="ID_luogo">
+		                    </div>
+		           		</div>
+		      	</div>
+		      </div>
+            
+            </div>
+            <div id="tabs-2_luogo">
+            
+           		 METTER QUI I SALVATAGGI
+            
+            </div>
+            <div id="tabs-3_luogo">
+            
+            	METTERE QUI APERTURE
+            
+            </div>
+            <div id="tabs-4_luogo">
+            
+            	METTERE QUI IL CARRELLO
+            
+            </div>
+          </div>
+      </div> 
+      <!--Accordion FINE-->   
+    </div>
+     
+    </div> 
+    <!------------------------------------  --> 
+    <!--CONTENITORE BOTTOM  footer          -->
+    <!------------------------------------  --> 
+    <!--<div class="ui-layout-south">EVENTUALE FOOTER</div> -->
+
+
+    <!------------------------------------  --> 
+    <!--CODICE FINESTRE DETTAGLIO           -->
+    <!------------------------------------  -->    
+    <!--Lens: modello delle finestre di dettaglio -->
+   <div id="lensLuoghi" class="lens" role="lens"  enableCheckList="true" itemtype="luogo">
+        <div class="container" val-content="id">
+           
+            <img class="cover" prefisso="http://hoc13.elet.polimi.it/policulture/files/images/thumb/small/" src-content="cover"/></div>
+            <div class="float">
+				<div class="lens_title_color" if-exist="scuola_s"><span class="scuola" content="scuola_s"></span><span> - </span><span class="area" content="areaLabel_s"></div>
+                <div class="title" content="label"></div>
+                <div if-exist="format_s"><span class="format" content="format_s"></span></div>
+                <div if-exist="livelloscolastico_s"><span class="livello" content="livelloscolastico_s"></span></div>
+                <div if-exist="annoscolastico_s"><span class="anno" content="annoscolastico_s"></span></div>
+               
+                <div class="more">
+                    <div class='bott'>
+                        <!-- <div if-exist="abstract_s">
+						<div class="buttonDescr openOnClick" openOnClick="true" type="read" dest="div_descr" openLabel=" Leggi abstract" closeLabel=" Chiudi abstract"></div>
+						</div> -->
+                        <div><div class="buttonLink openOnClickLens" openOnClick="true" type="read" dest="div_link" openLabel=" Link al materiale" closeLabel=" Nascondi link"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="short" content="short_s"></div>
+				<div class="div_sino box" value="div_sino" hide="false">Sinossi</div>
+                <div class="div_descr box" value="div_descr" content="abstract_s" hide="false"></div>
+                <div class="div_link box" value="div_link" hide="true">
+                    <div>Link al materiale:</div>
+                    <div class="body" externalObj="true" idField="link_s" fieldFKey="esperieza_sSingle" externalCat="link" sortby="zindex_i%20asc">
+                        <div></div><!-- IL COD HTML QUI DENTRO è HARDCODED-->
+                    </div>
+                </div>
+                
+                <div if-exist="scuola_s"><span class="scuola"></span><span></span><span class="area"></div>
+            </div>
+        </div>
+   </div>
+   
+	<!--  D.T. Begin - aggiunta la lens per il tipo "document" -->
+	
+	<div id="lensDocument" class="lens" role="lens"  enableCheckList="true" itemtype="informazioni">
+        <div class="container" val-content="id">
+           
+            <img class="cover" prefisso="http://hoc13.elet.polimi.it/policulture/files/images/thumb/small/" src-content="cover"/></div>
+            <div class="float">
+				<div class="lens_title_color" if-exist="scuola_s"><span class="scuola" content="scuola_s"></span><span> - </span><span class="area" content="areaLabel_s"></div>
+                <div class="title" content="label"></div>
+                <div if-exist="format_s"><span class="format" content="format_s"></span></div>
+                <div if-exist="livelloscolastico_s"><span class="livello" content="livelloscolastico_s"></span></div>
+                <div if-exist="annoscolastico_s"><span class="anno" content="annoscolastico_s"></span></div>
+               
+                <div class="more">
+                    <div class='bott'>
+                        <div><div class="buttonLink openOnClickLens" openOnClick="true" type="read" dest="div_link" openLabel=" Link al materiale" closeLabel=" Nascondi link"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="short" content="short_s"></div>
+				<div class="div_sino box" value="div_sino" hide="false">Sinossi</div>
+                <div class="div_descr box" value="div_descr" content="abstract_s" hide="false"></div>
+                <div class="div_link box" value="div_link" hide="true">
+                    <div>Link al materiale:</div>
+                    <div class="body" externalObj="true" idField="link_s" fieldFKey="esperieza_sSingle" externalCat="link" sortby="zindex_i%20asc">
+                        <div></div>
+                    </div>
+                </div>
+                
+                <div if-exist="scuola_s"><span class="scuola"></span><span></span><span class="area"></div>
+            </div>
+                    
+        
+        </div>
+   </div>
+    
+    <!--  D.T. End -->
+
+</body>    
+</html>

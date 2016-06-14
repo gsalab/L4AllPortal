@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.1//EN"
+        "http://tuckey.org/res/dtds/urlrewrite3.1.dtd">
+<urlrewrite>
+	<rule>
+		<from>^/$</from>
+		<to type="forward">/index.html</to>
+	</rule>
+	<rule>
+		<from>^/comfit$</from>
+		<to type="forward">/index_comfit.html</to>
+	</rule>
+	<!-- <rule>	
+		<condition name="host" operator="notequal">^/(sanson|tremarie|ilpasticcere|gruppo|distributori|contatti|mailInviata|mailError)/([(A-Z)|(0-9)|%20|%27|'|’|,|-|.]+|~)/([(A-Z)|(0-9)|%20|%27|'|’|,|-|.]+|~)$</condition>
+		<from>^/(mongelo|tremarie|ilpasticcere|gruppo|distributori|contatti|mailInviata|mailError)/([(A-Z)|(0-9)|%20|%27|'|’|,|-|.]+|~)/(.*)</from>
+	    <to type="forward">/$3</to>
+	</rule> -->
+
+</urlrewrite>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+<div>
+<form id='load_$ITEM_TYPE$' class="load_container">
+  <div class="form-container">
+    <label for="treeview"><span class="form-container-title">Seleziona un gruppo per il caricamento:</span></label>
+    <div class="treeview   form-treeview">
+      
+    </div>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width='120'>Nome:</td>
+      <td  align="right"><input class='label' accept-charset = 'UTF-8' size='42' type='text' name='saveLabel' style='width:100%;'/></td>
+    </tr>
+    <tr>
+      <td>Note:</td>
+      <td align="right"><textarea class='note' accept-charset = 'UTF-8' NAME='note' cols='40' rows='6'  style='width:100%; resize: none; '></textarea></td>
+    </tr>
+    <!--<tr>
+      <td>Elementi salvati:</td>
+      <td  align="right"><input class='num-elem' size='4' type='text' /></td>
+    </tr>-->
+  </table>
+  <!-- campo nascsto per caricare i criteri di ricerca -->
+  <input class='query-solr' type='hidden' />
+  <input class='query-id' type='hidden' />
+  
+  <!-- campi nascsti per caricare la wishlist -->
+  <input class='type' type='hidden' />
+  <input class='wishlist-id' type='hidden' />
+  <input class='exp_ids' type='hidden' />
+  <br />
+  <button type='button' class='form-btn btn-applica'  style='float:right;'>Applica criteri di ricerca</button>
+  <button type='button' class='form-btn btn-sostiuisci' style='float:right;'>Sostituisci selezione</button>
+  <button type='button' class='form-btn btn-unisci' style='float:right;'>Aggiungi alla selezione</button>
+  <button type='button' class='form-btn btn-sottrai' style='float:right;'>Sottrai alla selezione</button>
+  <button type='button' class='form-btn btn-link' style='float:right;'>Genera link pubblico</button>
+  <button type='button' class='form-btn btn-delete' style='float:right;'>Elimina salvataggio</button>
+  <!-- <button type='button' class='form-btn btn-pdf' style='float:right;'>Stampa PDF</button>
+  <button type='button' class='form-btn btn-svuota' style='float:right;'>Elimina elemento</button> -->
+  </div>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+div.facet{
+    /* border: 1px solid #000000;
+    border-radius: 5px 5px 5px 5px; */
+    padding: 0.5em;
+    margin-bottom: 5px;
+    background-color : white;
+    
+}
+
+div.facet .facet-header img{
+    float:right;
+    height:18px;
+    cursor: pointer;
+}
+
+div.facet .facet-header span{
+    font-weight: bold;
+}
+
+div.facet .facet-body{
+    padding-top:5px;
+    font-size: 95%;
+    overflow-x: auto;
+}
+
+div.facet .facet-value{
+    cursor:pointer;
+    position:relative;
+     clear:left !important;
+}
+
+div.facet .facet-value > div{
+    float:left;
+}
+
+div.facet .facet-value .facet-histo {
+    left: 140px;
+    float:none;
+    position: absolute;
+    width: 40px;
+}
+
+div .hierFacet li {
+    clear: left !important;
+}
+
+
+div .hierFacet .facet-value > img{
+    float:left;
+}
+
+div .hierFacet .facet-value > span[title]{
+    display:block;
+    width: 85px;
+    float:left;
+}
+
+div.facet-value-label{
+    width: 95px;
+    padding-left: 3px;
+}
+
+.hierFacet .facet-body.percentView .facet-count{
+    font-size:90%;
+}
+
+
+div.facet-count{
+    left: 115px;
+    float:none;
+    position: absolute;
+    font-weight:bold;
+    padding-left: 3px;
+}
+
+.end{
+    float:none !important;
+    clear:left !important;
+}
+
+div.facet .facet-value div.facet-count{
+   /*display:none;*/
+}
+div.facet .facet-value.facet-value-selected div.facet-count{
+    display:inline;
+}
+
+
+div.facet.wc .facet-value.facet-value-excluded {
+	text-decoration: line-through;
+}
+
+.cloudFacet .relativeView .facet-value{
+    margin-right : 3px;    
+} 
+
+.cloudFacet .relativeView .facet-value-selected{
+    color: blue;    
+} 
+
+
+.hierFacet ul{
+    margin-top:0px;
+    margin-bottom:0px;
+    list-style: none;
+    padding-left: 10px;
+}
+.hierFacet li.leaf{
+    padding-left: 15px;
+}
+
+.hierFacet.facet-count{
+    font-weight:bold;
+    }
+
+/*css primo livello della gerarchia*/
+.hierFacet ul.l0 > li.facet-value > .facet-count{ position: absolute; left: 140px; } 
+.hierFacet ul.l0 > li.facet-value > .label{ width: 105px;} 
+
+/*css secondo livello della gerarchia*/
+.hierFacet ul.l1 > li.facet-value > .facet-count{ position: absolute; left: 130px; } 
+.hierFacet ul.l1 > li.facet-value > .label{ width: 95px;} 
+
+/*css terzo livello della gerarchia*/
+.hierFacet ul.l2 > li.facet-value > .facet-count{ position: absolute; left: 120px; } 
+.hierFacet ul.l2 > li.facet-value > .label{ width: 85px;}
+  
+/*css quarto livello della gerarchia*/
+.hierFacet ul.l3 > li.facet-value > .facet-count{ position: absolute; left: 110px; } 
+.hierFacet ul.l3 > li.facet-value > .label{ width: 75px;}
+            

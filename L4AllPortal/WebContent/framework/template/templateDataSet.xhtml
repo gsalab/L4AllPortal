@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+<div>
+
+<form id='dataset'>
+  <div class="form-container">
+    <input type="radio" name="d_cosa" value="all"/><span class="form-radio-item">Tutti</span><br/>
+    <input type="radio" name="d_cosa" value="selection"/><span class="form-radio-item">Selezione corrente</span><br/>
+    <input type="radio" name="d_cosa" value="carrello"/><span class="form-radio-item">Carrello</div>
+  </div>
+  
+  <div class="form-separator"></div>
+  
+  <div class="form-container">
+    <span class="form-container-title">Elementi disponibili:</span><br/>
+    <div style="background:#BCBEC0; line-height:30px; color:#FFF; padding:0px 10px;"><input size='4' type='text' name='num-selezione' disabled="disabled"/>&nbsp;&nbsp; Informazioni selezionate:</div>
+<!--    <label for="treeview">Seleziona un gruppo per il salvataggio:</label>-->
+    <div class="treeview  form-treeview">
+    </div>
+    <button type='button'  class='form-btn form-btn-red' style='float:right; width:250px; background:url(framework/script/images/ico-btn-setta.png) #f4553b no-repeat 15px;'>Setta come dataset di base</button>
+    <br/>
+    <button type='button'  class='form-btn form-btn-red' style='float:right; width:250px; background:url(framework/script/images/ico-btn-back.png) #f4553b no-repeat 15px;'>Torna al dataset completo</button>
+  </div>
+</form>
+
+</div>
+</body>
+</html>
