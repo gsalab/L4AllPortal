@@ -76,7 +76,7 @@
     <!-- <div role="rest_url" value="http://localhost:8080/l4allapp"></div>--> <!-- indirizzo dei servizi REST -->
     <!-- <div role="application_url" value="http://localhost:8080/l4all"></div>--> <!-- indirizzo dei servizi REST -->
     <div role="rest_url" value="http://193.204.76.235:8080/l4allapp"></div> <!-- indirizzo dei servizi REST -->
-    <div role="application_url" value="http://localhost:8080/L4AllPortal"></div> <!-- indirizzo dell'applicazione -->
+    <div role="application_url" value="http://193.204.76.235:8080/L4AllPortal"></div> <!-- indirizzo dell'applicazione -->
     <div role="enableRefraso" itemType="experience" string="Selezione attuale:" all="Tutte le esperienze"></div>  
  
     <!--Inizio design del layout a pannelli -->
