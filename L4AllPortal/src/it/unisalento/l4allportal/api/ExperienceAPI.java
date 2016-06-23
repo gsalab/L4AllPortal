@@ -13,7 +13,9 @@ import it.unisalento.l4allportal.dto.ColumnDTO;
 import it.unisalento.l4allportal.dto.FacetDTO;
 import it.unisalento.l4allportal.dto.FacetIDValuePair;
 import it.unisalento.l4allportal.dto.FacetValueDTO;
+import it.unisalento.l4allportal.dto.FacetValueIDDTO;
 import it.unisalento.l4allportal.dto.LayoutDTO;
+import it.unisalento.l4allportal.dto.LocalizedFacetValueDTO;
 import it.unisalento.l4allportal.dto.SchemaDTO;
 import it.unisalento.l4allportal.dto.WidgetDTO;
 import it.unisalento.l4allportal.util.Util;
@@ -22,6 +24,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.google.gson.JsonArray;
@@ -36,7 +39,7 @@ public class ExperienceAPI {
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public String postExperiences(SchemaDTO schema) {
+	public String postExperiences(SchemaDTO schema) { //, @QueryParam("lang") String lang
 		
 		String responseDescription = "SUCCESS";
 		int responseCode = 0;
@@ -54,7 +57,7 @@ public class ExperienceAPI {
 					Iterator<FacetDTO> fcts = w.getFacets().iterator();
 					while(fcts.hasNext()) {
 						FacetDTO f = fcts.next();
-						f.getFacetValueIDs();
+						ArrayList<FacetValueIDDTO> locales = f.getFacetValueIDs();
 						Iterator<FacetValueDTO> values = f.getFacetvalues().iterator();
 						while(values.hasNext()) {
 							FacetValueDTO fv = values.next();
@@ -70,22 +73,47 @@ public class ExperienceAPI {
 							JsonObject jso=expMap.get(fv.getExperienceID());
 							//if(fv.getValues() == null) continue;
 							Iterator<FacetIDValuePair> v = fv.getValues().iterator();
-							ArrayList<String> closeAnsw = new ArrayList<String>();
+							//ArrayList<String> closeAnsw = new ArrayList<String>();
+
 							while(v.hasNext()) {
 								FacetIDValuePair pair = v.next();
 								if(pair.getFacetValueID().startsWith("?")) {
 									String nrm = Util.getInstance().normalizePropertyName(pair.getFacetValueID().substring(1), true);
 									jso.addProperty(nrm, pair.getFacetValue());
 								}
-								else if("x".equalsIgnoreCase(pair.getFacetValue()))
-									closeAnsw.add(pair.getFacetValueID());
+								else if("x".equalsIgnoreCase(pair.getFacetValue())) {
+									String valueID = pair.getFacetValueID();
+									Iterator<FacetValueIDDTO> i=locales.iterator();
+									boolean found=false;
+									while(i.hasNext()) {
+										FacetValueIDDTO fvid = i.next();
+										if(valueID.equals(fvid.getID())) {
+											found=true;
+											Iterator<LocalizedFacetValueDTO> locs = fvid.getLocalizedValues().iterator();
+											while(locs.hasNext()) {
+												JsonArray jsaProp=new JsonArray();
+												LocalizedFacetValueDTO loc = locs.next();
+												jsaProp.add(new JsonPrimitive(loc.getValue()));
+												String lang = loc.getLang().substring(1, 3).toLowerCase();
+												jso.add(Util.getInstance().normalizePropertyName(f.getId()+"_"+lang, true), jsaProp);
+												//closeAnsw.add(l);
+											}
+										}
+									}
+									if(!found) {
+										JsonArray jsaProp=new JsonArray();
+										jsaProp.add(new JsonPrimitive(valueID));
+										jso.add(Util.getInstance().normalizePropertyName(f.getId()+"_it", true), jsaProp);
+										
+									}
+								}
 							}
-							if(closeAnsw.size()>0) {
-								JsonArray jsaProp=new JsonArray();
-								Iterator<String> iterator = closeAnsw.iterator();
-								while(iterator.hasNext()) jsaProp.add(new JsonPrimitive(iterator.next()));
-								jso.add(Util.getInstance().normalizePropertyName(f.getId(), true), jsaProp);
-							}
+//							if(closeAnsw.size()>0) {
+//								JsonArray jsaProp=new JsonArray();
+//								Iterator<String> iterator = closeAnsw.iterator();
+//								while(iterator.hasNext()) jsaProp.add(new JsonPrimitive(iterator.next()));
+//								jso.add(Util.getInstance().normalizePropertyName(f.getId(), true), jsaProp);
+//							}
 						}
 					}
 				}

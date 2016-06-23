@@ -10,6 +10,20 @@
 				java.lang.*,
 				java.util.*,
 				java.util.Map.Entry" %>
+<% 
+	final int ITALIANO = 0;
+	final int INGLESE = 1;
+	
+	int lingua = ITALIANO;
+	String lang = request.getParameter("lang");
+	if(lang==null) lang="it";
+	else {
+		if("it".equals(lang)) lingua = ITALIANO;
+		else if("en".equals(lang)) {
+			lingua = INGLESE;
+		}
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -62,7 +76,7 @@
     <!-- <div role="rest_url" value="http://localhost:8080/l4allapp"></div>--> <!-- indirizzo dei servizi REST -->
     <!-- <div role="application_url" value="http://localhost:8080/l4all"></div>--> <!-- indirizzo dei servizi REST -->
     <div role="rest_url" value="http://193.204.76.235:8080/l4allapp"></div> <!-- indirizzo dei servizi REST -->
-    <div role="application_url" value="http://193.204.76.235:8080/EDOCPortal"></div> <!-- indirizzo dell'applicazione -->
+    <div role="application_url" value="http://localhost:8080/L4AllPortal"></div> <!-- indirizzo dell'applicazione -->
     <div role="enableRefraso" itemType="experience" string="Selezione attuale:" all="Tutte le esperienze"></div>  
  
     <!--Inizio design del layout a pannelli -->
@@ -235,24 +249,34 @@
 			      			FacetDTO f = fcts.next();
 			      			ArrayList<String> fids = new ArrayList<String>();
 			      			ArrayList<String> fids_lbl = new ArrayList<String>();
+			      			ArrayList<Boolean> qmark=new ArrayList<Boolean>();
 			      			if(f.getFacetValueIDs().get(0).getID().startsWith("?")) {
 			      				Iterator<FacetValueIDDTO> pairs = f.getFacetValueIDs().iterator();
 			      				while(pairs.hasNext()) {
 			      					FacetValueIDDTO next = pairs.next();
 			      					fids.add(next.getID().substring(1));
-		      						fids_lbl.add(next.getID().substring(1));
+		      						//fids_lbl.add(next.getID().substring(1));
+			      					fids_lbl.add(f.getLocalizedNames().get(lingua).getValue());
+			      					qmark.add(true);
 			      				}
 			      			}
 			      			
 			      			else {
 			      				fids.add(f.getId());
-			      				fids_lbl.add(f.getName());
+			      				fids_lbl.add(f.getLocalizedNames().get(lingua).getValue().replace("\"","'"));
+		      					qmark.add(false);
+// 			      				if(f.getLocalizedNames().get(1).getValue()!=null && !"".equals(f.getLocalizedNames().get(1).getValue()))
+// 			      					fids_lbl.add(f.getLocalizedNames().get(1).getValue());
+// 			      				else
+// 			      					fids_lbl.add(f.getName());
 			      			}
 			      			Iterator<String> ff=fids.iterator();
 			      			Iterator<String> ff_lbl=fids_lbl.iterator();
+			      			Iterator<Boolean> qmark_i=qmark.iterator();
 			      			while(ff.hasNext()) {
 			      				String fid=Util.getInstance().normalizePropertyName(ff.next(), false);
 			      				String lbl=ff_lbl.next();
+			      				Boolean question=qmark_i.next();
 				      			%>
 				      			<div id="facet_<%=fid  %>"  class="tech" role="facet"  
 			                        facetClass="Cloud"  
@@ -262,7 +286,7 @@
 			                        minNum="4" 
 			                        maxNum="12" 
 			                        collapsed="true"
-			                        expression="<%=fid+"_s" %>" 
+			                        expression="<%=fid+(question?"":"_"+lang)+"_s" %>" 
 			                        conj="one"
 			                        facetLabel="<%=lbl %>"
 			                        changeRendering="true"
