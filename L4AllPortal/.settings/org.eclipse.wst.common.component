@@ -2,7 +2,7 @@
     <wb-module deploy-name="L4AllPortal">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="L4AllPortalDTO.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/L4AllPortalDTO/L4AllPortalDTO">
+        <dependent-module archiveName="L4AllPortalDTO-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/L4AllPortalDTO/L4AllPortalDTO">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="L4AllPortal"/>
